@@ -1,0 +1,3 @@
+Fazendo os exercicios
+Testando os comandos
+Apredendo a utilizar o shell ou terminal

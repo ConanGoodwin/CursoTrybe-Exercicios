@@ -1,0 +1,2 @@
+echo "Entre com o valor para a variável: " ; read variavel
+echo $variavel
