@@ -1,4 +1,4 @@
-# BLOCO 1 - Unix & Bash
+## BLOCO 1 - Unix & Bash
 
 _Esse bloco pertence ao módulo de `fundamentos` do curso da [Trybe](https://www.betrybe.com/). Nesse bloco aprendi sobre os fundamentos que norteiam o Desenvolvimento Web, uma introdução sobre a historia dos sistemas unix, conceito de shell e demais 'camadas' do sistema e como elas interagem entre si, e uma introdução aos comandos mais utilizados e básicos do terminal Bash._
 

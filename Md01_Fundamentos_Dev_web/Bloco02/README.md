@@ -1,4 +1,4 @@
-# BLOCO 2 - Git, GitHub e Internet
+## BLOCO 2 - Git, GitHub e Internet
 
 _Esse bloco pertence ao módulo de `fundamentos` do curso da [Trybe](https://www.betrybe.com/). Nesse bloco aprendi sobre o Git e o GitHub, e todos os conceitos básicos suficientes para criar um repositório (no caso este presente repositório), tanto local quanto remoto, e todos os comandos básicos para manipular arquivos e manter estas manipulações sincronizadas entre repositórios. Neste bloco também passamos por uma pequena introdução nos conceitos de funcionamento da Internet._
 
