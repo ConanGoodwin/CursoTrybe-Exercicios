@@ -1,0 +1,39 @@
+body {
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 65px;
+  font-family: sans-serif;
+  color: orange;
+  text-align: center;
+  text-decoration: underline;
+}
+
+p {
+  font-weight: 600;
+  font-size: 3em;
+  line-height: 15px;
+}
+
+ul {
+  background-color: dodgerblue;
+  font-family: monospace;
+  font-style: oblique;
+}
+
+.fundo-lista-paragrafo {
+  background-color: olive;
+}
+
+#liAmarelo {
+  color: yellow;
+}
+
+#liVermelho {
+  color: red;
+}
+
+#liMarrom {
+  color: brown;
+}
