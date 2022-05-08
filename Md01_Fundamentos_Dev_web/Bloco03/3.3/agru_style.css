@@ -3,6 +3,10 @@ p {
   text-align: center;
 }
 
+ol, ul {
+  list-style: none;
+}
+
 ol:hover {
   background-color: green;
 }
