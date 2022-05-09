@@ -31,6 +31,30 @@ h1 em, h2 em, h3 em {
   color:blue;
 }
 
+#ulAliados li:hover {
+  font-weight: bold;
+}
+
+#ulAliados li a[href*="stackoverflow"]:hover {
+  color: orange;
+}
+
+#ulAliados li a[href*="w3schools"]:hover {
+  color:green;
+}
+
+#ulAliados li a[href*="mozilla"]:hover{
+  color:black;
+}
+
+#ulAliados li a[href*="devdocs"]:hover{
+  color:yellow;
+}
+
+#ulAliados li a[href*="betrybe"]:hover{
+  color:green;
+}
+
 .fundo-rosa {
   background-color: pink;
 }
