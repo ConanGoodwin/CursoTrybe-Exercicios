@@ -1,0 +1,18 @@
+h1,
+p {
+  text-align: center;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+ol:hover {
+  background-color: green;
+  transition: ease-in-out;
+  transition-duration: 0.5s;
+}
+
+li:active {
+  color: blue;
+}

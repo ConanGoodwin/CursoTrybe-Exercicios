@@ -1,0 +1,60 @@
+ol li {
+  background-color: yellow;
+}
+
+ol li:nth-child(even) {
+  color: green;
+}
+
+ol li:nth-child(odd) {
+  text-transform: uppercase;
+}
+
+li {
+  font-size: 20px;;
+}
+
+li em {
+  font-weight: bold;
+}
+
+h1, h2, h3 {
+  color: red;
+}
+
+h1 em, h2 em, h3 em {
+  font-size: 40px;
+  border: 1px solid black;
+}
+
+#ulLinguagem li:nth-child(1), #ulLinguagem li:nth-child(2), #ulLinguagem li:nth-child(3) {
+  color:blue;
+}
+
+#ulAliados li:hover {
+  font-weight: bold;
+}
+
+#ulAliados li a[href*="stackoverflow"]:hover {
+  color: orange;
+}
+
+#ulAliados li a[href*="w3schools"]:hover {
+  color:green;
+}
+
+#ulAliados li a[href*="mozilla"]:hover{
+  color:black;
+}
+
+#ulAliados li a[href*="devdocs"]:hover{
+  color:yellow;
+}
+
+#ulAliados li a[href*="betrybe"]:hover{
+  color:green;
+}
+
+.fundo-rosa {
+  background-color: pink;
+}
