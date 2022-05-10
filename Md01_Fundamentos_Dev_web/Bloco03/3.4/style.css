@@ -3,13 +3,27 @@ h1 {
     margin: 0;
 }
 
-nav {
-    background-color: aqua;
+main {
+    display: inline-block;
+    width: 79%;
+    background-color: blanchedalmond;
+}
+
+#navLateral {
+    display: inline-block;
+    width: 20%;
+    background-color: gray;
+    height: 100%;
+    vertical-align:top;
 }
 
 #titulo {
     background-color: blue;
     padding: 10px 5px;
+}
+
+#navIndice {
+    background-color: aqua;
 }
 
 #indice {
