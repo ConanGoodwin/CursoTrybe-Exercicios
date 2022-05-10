@@ -1,0 +1,22 @@
+h1 {
+    color: white;
+    margin: 0;
+}
+
+nav {
+    background-color: aqua;
+}
+
+#titulo {
+    background-color: blue;
+    padding: 10px 5px;
+}
+
+#indice {
+    margin: 0;
+}
+
+#indice li{
+    display:inline;
+    margin: 2px 20px;
+}
