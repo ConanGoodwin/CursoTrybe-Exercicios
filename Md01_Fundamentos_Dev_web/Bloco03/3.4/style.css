@@ -28,3 +28,7 @@ nav {
 #tbClassificacao td {
     border: 1px solid black;
 }
+
+#imgStomatopoda, #imgVisao, #imgTamanho, #imgMoradia, #imgPatas {
+    width: 500px;
+}
