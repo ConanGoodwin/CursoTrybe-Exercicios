@@ -20,3 +20,11 @@ nav {
     display:inline;
     margin: 2px 20px;
 }
+
+#tbClassificacao, #tbClassificacao th {
+    border: 2px solid black;
+}
+
+#tbClassificacao td {
+    border: 1px solid black;
+}
