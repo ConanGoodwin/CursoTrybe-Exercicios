@@ -4,6 +4,8 @@ body {
 
 h1 {
     color: white;
+    background-color: blue;
+    padding: 10px 5px;
     margin: 0;
 }
 
@@ -24,11 +26,6 @@ footer {
     background-color: gray;
     height: 100%;
     vertical-align:top;
-}
-
-#titulo {
-    background-color: blue;
-    padding: 10px 5px;
 }
 
 #navIndice {
