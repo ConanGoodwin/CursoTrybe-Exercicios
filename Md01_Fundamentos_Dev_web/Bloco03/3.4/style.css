@@ -1,0 +1,59 @@
+body {
+    background-color: black;
+}
+
+h1 {
+    color: white;
+    background-color: blue;
+    padding: 10px 5px;
+    margin: 0;
+}
+
+main {
+    display: inline-block;
+    width: 75%;
+    background-color: blanchedalmond;
+}
+
+footer {
+    border: 1px solid white;
+    background-color: aqua;
+}
+
+#navLateral {
+    display: inline-block;
+    padding: 23px;
+    width: 20%;
+    background-color: gray;
+    height: 100%;
+    vertical-align:top;
+}
+
+#navLateral h2, #navLateral a {
+    color: white;
+}
+
+#navIndice {
+    background-color: aqua;
+}
+
+#indice {
+    margin: 0;
+}
+
+#indice li{
+    display:inline;
+    margin: 2px 20px;
+}
+
+#tbClassificacao, #tbClassificacao th {
+    border: 2px solid black;
+}
+
+#tbClassificacao td {
+    border: 1px solid black;
+}
+
+#imgStomatopoda, #imgVisao, #imgTamanho, #imgMoradia, #imgPatas {
+    width: 500px;
+}
