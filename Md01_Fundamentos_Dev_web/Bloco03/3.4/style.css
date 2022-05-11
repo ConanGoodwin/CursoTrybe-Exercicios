@@ -11,7 +11,7 @@ h1 {
 
 main {
     display: inline-block;
-    width: 79%;
+    width: 75%;
     background-color: blanchedalmond;
 }
 
@@ -22,10 +22,15 @@ footer {
 
 #navLateral {
     display: inline-block;
+    padding: 23px;
     width: 20%;
     background-color: gray;
     height: 100%;
     vertical-align:top;
+}
+
+#navLateral h2, #navLateral a {
+    color: white;
 }
 
 #navIndice {
