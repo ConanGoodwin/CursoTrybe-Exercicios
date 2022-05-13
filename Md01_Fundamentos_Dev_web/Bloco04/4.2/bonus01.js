@@ -4,19 +4,16 @@ let numbersPeloSeguinte = [];
 //parte 03
 
 for (let index = 0; index < numbers.length; index += 1) {
-  if (numbers[index+1]  === undefined) {
+  if (index + 1 === numbers.length) {
     numbersPeloSeguinte.push(numbers[index] * 2);
-  }
-  else {
+  } else {
     numbersPeloSeguinte.push(numbers[index] * numbers[index + 1]);
   }
 }
 
 console.log(numbersPeloSeguinte);
 
-// for (numero of numbers) {
-//   numbersPeloSeguinte.push(numero);
-// }
+//parte 01
 
 // for (let index = 0; index < numbers.length; index += 1) {
 //   for (let index2 = 0; index2 < numbers.length; index2 += 1) {
@@ -30,6 +27,8 @@ console.log(numbersPeloSeguinte);
 
 // console.log(numbers);
 
+//parte 02
+
 // for (let index = 0; index < numbers.length; index += 1) {
 //   for (let index2 = 0; index2 < numbers.length; index2 += 1) {
 //     if (numbers[index] > numbers[index2]) {
@@ -41,13 +40,3 @@ console.log(numbersPeloSeguinte);
 // }
 
 // console.log(numbers);
-
-// console.log(numbersPeloSeguinte);
-
-// for (let index = 0; index < numbersPeloSeguinte.length; index += 1) {
-//   if (numbersPeloSeguinte[index + 1] === undefined) {
-//     numbersPeloSeguinte[index] *= 2;
-//   } else {
-//     numbersPeloSeguinte[index] *= numbersPeloSeguinte[index + 1];
-//   }
-// }
