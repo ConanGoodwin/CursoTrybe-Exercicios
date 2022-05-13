@@ -1,5 +1,6 @@
 let numbers = [5, 9, 3, 19, 70, 8, 100, 2, 35, 27];
 let soma=0;
+let maior=0;
 
 for (numero of numbers) {
   console.log(numero);
@@ -17,3 +18,11 @@ if ((soma / numbers.length) > 20) {
 }else {
   console.log("valor menor ou igual a 20");
 }
+
+for (numero of numbers) {
+  if (numero > maior) {
+    maior = numero;
+  }
+}
+
+console.log("Maior numero do array: " + maior);
