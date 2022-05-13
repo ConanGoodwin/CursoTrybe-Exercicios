@@ -4,6 +4,7 @@ let maior = 0;
 let qtImpar = 0;
 let menor = 0;
 let qt25 = [];
+let qt25por2 =[];
 
 for (numero of numbers) {
   console.log(numero);
@@ -65,3 +66,9 @@ for (let numero = 0; numero < 25; numero += 1) {
 }
 
 console.log(qt25);
+
+for (numero of qt25) {
+  qt25por2.push(numero / 2);
+}
+
+console.log(qt25por2);
