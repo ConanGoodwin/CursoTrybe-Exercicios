@@ -1,4 +1,4 @@
-const num1 = 5, num2 =10, num3 = 2;
+const num1 = 2, num2 =10, num3 = 4;
 
 if (num1 === num2) {
     if (num1 === num3) {
