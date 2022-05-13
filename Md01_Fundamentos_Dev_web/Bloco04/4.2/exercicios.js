@@ -3,6 +3,7 @@ let soma = 0;
 let maior = 0;
 let qtImpar = 0;
 let menor = 0;
+let qt25 = [];
 
 for (numero of numbers) {
   console.log(numero);
@@ -58,3 +59,9 @@ for (let numero = 0; numero < numbers.length; numero += 1) {
 }
 
 console.log("Menor numero do array: " + menor);
+
+for (let numero = 0; numero < 25; numero += 1) {
+  qt25.push(numero + 1);
+}
+
+console.log(qt25);
