@@ -11,34 +11,34 @@
   <main>
     <section id="tela">
       <p id="operacaoAnterior">...</p>
-      <p id="operacaoAtual">0</p>
+      <p id="operacaoAtual">1</p>
     </section>
     <section id="teclado">
       <table id="teclas">
         <tr>
-          <td>Zera</td>
-          <td>/</td>
-          <td>*</td>
-          <td>-</td>
+          <td onclick="operacao('z')">0</td>
+          <td onclick="operacao('/')">/</td>
+          <td onclick="operacao('*')">*</td>
+          <td onclick="operacao('-')">-</td>
         </tr>
         <tr>
-          <td>7</td>
-          <td>8</td>
-          <td>9</td>
-          <td rowspan="2">+</td>
+          <td onclick="operacao('7')">7</td>
+          <td onclick="operacao('8')">8</td>
+          <td onclick="operacao('9')">9</td>
+          <td onclick="operacao('+')" rowspan="2">+</td>
         </tr>
         <tr>
-          <td>4</td>
-          <td>5</td>
-          <td>6</td>
+          <td onclick="operacao('4')">4</td>
+          <td onclick="operacao('5')">5</td>
+          <td onclick="operacao('6')">6</td>
         </tr>
-          <td>1</td>
-          <td>2</td>
-          <td>3</td>
-          <td rowspan="2">=</td>
+          <td onclick="operacao('1')">1</td>
+          <td onclick="operacao('2')">2</td>
+          <td onclick="operacao('3')">3</td>
+          <td onclick="operacao('=')" rowspan="2">=</td>
         <tr>
-          <td colspan="2">0</td>
-          <td>,</td>
+          <td onclick="operacao('0')" colspan="2">0</td>
+          <td onclick="operacao(',')">,</td>
         </tr>
         <tr>
 
