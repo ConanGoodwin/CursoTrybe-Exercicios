@@ -1,4 +1,4 @@
-let operador = "";
+let operador = false;
 
 function operacao(numOuOp) {
   console.log(numOuOp);
@@ -6,7 +6,7 @@ function operacao(numOuOp) {
 
   switch (numOuOp) {
     case "=":
-      if (textoAtual != 0) {
+      if (textoAtual != 0 && operador !== true) {
         document.getElementById("operacaoAnterior").innerText = textoAtual;
         textoAtual = eval(textoAtual);
         console.log(textoAtual);
@@ -21,7 +21,16 @@ function operacao(numOuOp) {
       }
       break;
     default:
-      textoAtual += numOuOp;
+      if (numOuOp === "/" || numOuOp === "*" || numOuOp === "-" || numOuOp === "+") {
+        operador = true;
+      } else {
+        operador = false;
+      }
+      if (operador === false ) {
+        textoAtual += numOuOp;
+      } else if (textoAtual[textoAtual.length - 1] !== "/" && textoAtual[textoAtual.length - 1] !== "*" && textoAtual[textoAtual.length - 1] !== "-" && textoAtual[textoAtual.length - 1] !== "+") {
+        textoAtual += numOuOp;
+      }
       if (textoAtual === "0/" || textoAtual === "0*" || textoAtual === "0-" || textoAtual === "0+") {
         textoAtual = "0";
       }
