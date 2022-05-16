@@ -15,6 +15,11 @@ function operacao(numOuOp) {
     case "z":
       textoAtual = "0";
       break;
+    case "," || ".":
+      if (!textoAtual.includes(".") && !textoAtual.includes(",")) {
+        textoAtual += ".";
+      }
+      break;
     default:
       textoAtual += numOuOp;
       if (textoAtual === "0/" || textoAtual === "0*" || textoAtual === "0-" || textoAtual === "0+") {
