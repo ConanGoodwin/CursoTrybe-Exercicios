@@ -5,13 +5,13 @@ let emBranco = n - asterisco;
 
 for (let vertical = 0; vertical < n; vertical += 1) {
   linha = "";
-  for (let caracter = 1; caracter <= n; caracter +=1) {
-    if (caracter === asterisco) {
+  for (let caracter = n; caracter > 0; caracter -=1) {
+    if (caracter <= asterisco) {
       linha += "*"
     } else {
       linha += " ";
     }
-    asterisco += 1;
   }
+  asterisco += 1;
   console.log(linha);
 }
