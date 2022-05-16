@@ -42,7 +42,8 @@ p {
   height: 200px;
 }
 
-/* .coluna-fina {
-  display:block;
-  height: 30px;
-} */
+td.coluna-fina {
+  /* display:block;
+  height: 30px; */
+  /* column-width: 1px; */
+}
