@@ -1,49 +1,53 @@
 let operador = "";
-let resultado = 0;
-let numero = 0;
+let resultado = "";
+let numero = "";
 
 function operacao(numOuOp) {
   console.log(numOuOp);
+  let textoAtual = document.getElementById("operacaoAtual").innerText;
 
   switch (numOuOp) {
     case "z":
-      document.getElementById('operacaoAtual').innerText = "0";
+      textoAtual = "0";
       break;
     case "/":
-      operador = "/"
+      operador = "/";
+      textoAtual += operador;
       break;
     case "*":
+      operador = "*";
+      textoAtual += operador;
       break;
     case "-":
+      operador = "*";
+      textoAtual += operador;
       break;
     case "+":
+      operador = "+";
+      textoAtual += operador;
       break;
     case "=":
+      if (textoAtual === 0) {
+        textoAtual = numero;
+        operador = "";
+      } else {
+        textoAtual += operador + numero;
+        operador = "";
+        numero = ""
+      }
       break;
     case ",":
+      textoAtual += ".";
       break;
-    case "1":
-      break;
-    case "2":
-      break;
-    case "3":
-      break;
-    case "4":
-      break;
-    case "5":
-      break;
-    case "6":
-      break;
-    case "7":
-      break;
-    case "8":
-      break;
-    case "9":
-      break;
-    case "0":
+    default:
+      textoAtual += numOuOp;
   }
+
+  if (textoAtual[0] == "0" && textoAtual.length > 1) {
+    textoAtual = textoAtual.slice(1,textoAtual.length);
+  }
+
+  document.getElementById("operacaoAtual").innerText = textoAtual;
 }
 
-function calcula() {
-
-}
+function calcula() {}
