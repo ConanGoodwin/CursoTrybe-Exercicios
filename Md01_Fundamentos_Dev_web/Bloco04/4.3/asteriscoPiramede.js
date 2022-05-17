@@ -1,4 +1,4 @@
-let n = 6;
+let n = 5;
 let linha = "";
 let asterisco = 1;
 let emBranco = n / 2 - 1;
@@ -15,7 +15,7 @@ for (let vertical = 0; vertical < n; vertical += 1) {
   asterisco += 2;
   emBranco -= 1;
   console.log(linha);
-  if (emBranco < 0) {
+  if (asterisco >= n) {
     break;
   }
 }
