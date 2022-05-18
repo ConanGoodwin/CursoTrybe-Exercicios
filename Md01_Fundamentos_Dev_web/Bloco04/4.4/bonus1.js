@@ -48,6 +48,10 @@ for (let index = 0; index < romanos.length; index += 1) {
     case "M":
       numero += 1000;
       break;
+    default:
+      numero = "numero romano com  caracter inválido!";
+      index = romanos.length;
+      break;
   }
 }
 
