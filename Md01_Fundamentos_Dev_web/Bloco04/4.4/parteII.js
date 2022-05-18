@@ -60,25 +60,38 @@
 let inteiros = [2, 3, 2, 5, 8, 2, 3];
 let inteiros2 = [2, 5, 2, 5, 5, 2, 5];
 
-function maisRepete(numeros) {
-  let qtAtual = 0;
-  let qtRepetido = 0;
-  let index = "";
+// function maisRepete(numeros) {
+//   let qtAtual = 0;
+//   let qtRepetido = 0;
+//   let index = "";
 
-  for (let chave in numeros) {
-    for (chave2 in numeros) {
-      if (numeros[chave] === numeros[chave2]) {
-          qtAtual += 1;
-      }
-    }
-    if (qtAtual > qtRepetido) {
-      qtRepetido = qtAtual;
-      index = numeros[chave];
-    }
-    qtAtual = 0;
+//   for (let chave in numeros) {
+//     for (chave2 in numeros) {
+//       if (numeros[chave] === numeros[chave2]) {
+//           qtAtual += 1;
+//       }
+//     }
+//     if (qtAtual > qtRepetido) {
+//       qtRepetido = qtAtual;
+//       index = numeros[chave];
+//     }
+//     qtAtual = 0;
+//   }
+
+//   return index; 
+// }
+
+// console.log(maisRepete(inteiros2));
+
+let numeroNatual = 5;
+
+function somaNumero(numero) {
+  let total = 0;
+
+  for (let index = 1; index <= numero; index += 1) {
+    total += index;
   }
-
-  return index; 
+  return total;
 }
 
-console.log(maisRepete(inteiros2));
+console.log(somaNumero(numeroNatual));
