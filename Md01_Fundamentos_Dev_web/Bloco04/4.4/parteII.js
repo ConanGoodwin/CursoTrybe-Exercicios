@@ -26,18 +26,33 @@
 
 // console.log(retornaMaior(array));
 
-let array = [2, 4, 6, 7, 10, 0, -3];
+// let array = [2, 4, 6, 7, 10, 0, -3];
 
-function retornaMenor(numeros) {
-  let menor = numeros[0];
+// function retornaMenor(numeros) {
+//   let menor = numeros[0];
 
-  for (let index = 1; index < numeros.length; index += 1) {
-    if (menor > numeros[index]) {
-      menor = index;
+//   for (let index = 1; index < numeros.length; index += 1) {
+//     if (menor > numeros[index]) {
+//       menor = index;
+//     }
+//   }
+
+//   return menor;
+// }
+
+// console.log(retornaMenor(array));
+
+let array = ["José", "Lucas", "Nádia", "Fernanda", "Cairo", "Joana"];
+
+function maiorNome(nomes) {
+  let nomeMaior = "";
+
+  for (let chave in nomes) {
+    if (nomes[chave].length > nomeMaior.length) {
+      nomeMaior = nomes[chave];
     }
   }
-
-  return menor;
+  return nomeMaior;
 }
 
-console.log(retornaMenor(array));
+console.log(maiorNome(array));
