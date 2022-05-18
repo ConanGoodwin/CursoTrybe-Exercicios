@@ -57,8 +57,8 @@
 
 // console.log(maiorNome(array));
 
-let inteiros = [2, 3, 2, 5, 8, 2, 3];
-let inteiros2 = [2, 5, 2, 5, 5, 2, 5];
+// let inteiros = [2, 3, 2, 5, 8, 2, 3];
+// let inteiros2 = [2, 5, 2, 5, 5, 2, 5];
 
 // function maisRepete(numeros) {
 //   let qtAtual = 0;
@@ -78,20 +78,39 @@ let inteiros2 = [2, 5, 2, 5, 5, 2, 5];
 //     qtAtual = 0;
 //   }
 
-//   return index; 
+//   return index;
 // }
 
 // console.log(maisRepete(inteiros2));
 
-let numeroNatual = 5;
+// let numeroNatual = 5;
 
-function somaNumero(numero) {
-  let total = 0;
+// function somaNumero(numero) {
+//   let total = 0;
 
-  for (let index = 1; index <= numero; index += 1) {
-    total += index;
+//   for (let index = 1; index <= numero; index += 1) {
+//     total += index;
+//   }
+//   return total;
+// }
+
+// console.log(somaNumero(numeroNatual));
+
+let stringWord = "trybe";
+let stringEnding = "be";
+
+function verificaFimPalavra(palavra, cauda) {
+  let seFinal = false;
+
+  for (let index = palavra.length - 1; index > cauda.length; index -= 1) {
+    if (palavra[index] === cauda[index - cauda.length - 1]) {
+      seFinal = true;
+    } else {
+      seFinal = false;
+    }
   }
-  return total;
+
+  return seFinal;
 }
 
-console.log(somaNumero(numeroNatual));
+console.log(verificaFimPalavra(stringWord, stringEnding));
