@@ -42,17 +42,43 @@
 
 // console.log(retornaMenor(array));
 
-let array = ["José", "Lucas", "Nádia", "Fernanda", "Cairo", "Joana"];
+// let array = ["José", "Lucas", "Nádia", "Fernanda", "Cairo", "Joana"];
 
-function maiorNome(nomes) {
-  let nomeMaior = "";
+// function maiorNome(nomes) {
+//   let nomeMaior = "";
 
-  for (let chave in nomes) {
-    if (nomes[chave].length > nomeMaior.length) {
-      nomeMaior = nomes[chave];
+//   for (let chave in nomes) {
+//     if (nomes[chave].length > nomeMaior.length) {
+//       nomeMaior = nomes[chave];
+//     }
+//   }
+//   return nomeMaior;
+// }
+
+// console.log(maiorNome(array));
+
+let inteiros = [2, 3, 2, 5, 8, 2, 3];
+let inteiros2 = [2, 5, 2, 5, 5, 2, 5];
+
+function maisRepete(numeros) {
+  let qtAtual = 0;
+  let qtRepetido = 0;
+  let index = "";
+
+  for (let chave in numeros) {
+    for (chave2 in numeros) {
+      if (numeros[chave] === numeros[chave2]) {
+          qtAtual += 1;
+      }
     }
+    if (qtAtual > qtRepetido) {
+      qtRepetido = qtAtual;
+      index = numeros[chave];
+    }
+    qtAtual = 0;
   }
-  return nomeMaior;
+
+  return index; 
 }
 
-console.log(maiorNome(array));
+console.log(maisRepete(inteiros2));
