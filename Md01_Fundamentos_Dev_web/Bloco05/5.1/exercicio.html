@@ -54,6 +54,9 @@
     mudaTextoTag();
     mudaAmareloParaVerde();
     mudaVermelhoParaBranco();
+    corrigeH1();
+    exibeTagsP();
+    pMaiusculo();
 
     // Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos. (Não gaste tempo pensando no texto e sim realizando o exercício)
     function mudaTextoTag() {
@@ -75,8 +78,28 @@
     }
 
     //Crie uma função que corrija o texto da tag <h1>.
+    function corrigeH1() {
+      let corrigido = document.getElementsByTagName('h1')[0];
+
+      corrigido.innerText = 'Exercício 5.1 - JavaScript';
+    }
     //Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+    function pMaiusculo() {
+      let maiusculo = document.getElementsByTagName('p');
+
+      for (let chave in maiusculo) {
+        maiusculo[chave].innerText = maiusculo[chave].innerText.toLocaleUpperCase();
+      }
+    }
+
     //Crie uma função que exiba o conteúdo de todas as tags <p> no console.
+    function exibeTagsP() {
+      let tags = document.getElementsByTagName('p');
+      
+      for (let chave in tags) {
+        console.log(tags[chave].innerText);
+      }
+    }
 
   </script>
 </body>
