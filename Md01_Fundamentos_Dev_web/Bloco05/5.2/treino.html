@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,7 +21,38 @@
   </main>
 
   <script>
-    
+    let atual = document.getElementById('elementoOndeVoceEsta');
+    let pai = atual.parentNode;
+    let primFilho = atual.children[0]; 
+    let primeiroFilhoPai =pai.children[0];
+    let filhoBastardoDoPai;
+    let filhoBastrado;
+    let filhoBastardoDoFilho;
+
+    pai.style.background = "red"
+    primFilho.innerText = "testando";
+
+    console.log(atual);
+    console.log(primFilho);
+    console.log(pai);
+    console.log(primeiroFilhoPai);
+
+    filhoBastardoDoPai = document.createElement('section');
+    filhoBastardoDoPai.id = "elementoBastardoViaPai";
+
+    atual.parentNode.appendChild(filhoBastardoDoPai);
+
+    filhoBastrado = document.createElement('section');
+    filhoBastrado.id ="elementoBastardo"
+
+    atual.appendChild(filhoBastrado);
+
+    filhoBastardoDoFilho = document.createElement('section');
+    filhoBastardoDoFilho.id = "elementoBastarDDoViaFilho";
+
+    atual.children[0].appendChild(filhoBastardoDoFilho);
+
+    console.log(filhoBastardoDoFilho.parentNode.parentNode.parentNode.children[2]);
   </script>
 </body>
 </html>
