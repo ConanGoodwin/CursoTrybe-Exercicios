@@ -65,12 +65,45 @@
     let setor = criaTag('section', 'className', 'center-content');
     let paragrafo = criaTag('p', 'innerText', 'exercicios do bloco 05 dia 02');
     let imagem = criaTag('img', 'src', 'https://picsum.photos/200');
+    let listaNordenada = document.createElement('ul');
 
     function criaTag(tipo, atributo, valorAtributo) {
       let tag = document.createElement(tipo);
 
       tag[atributo] = valorAtributo;
       return tag;
+    }
+
+    function converteNumEmExtenso(numero) {
+      switch (numero) {
+        case 1:
+          return 'um';
+          break;
+        case 2:
+          return 'dois';
+          break;
+        case 3:
+          return 'tres';
+          break;
+        case 4:
+          return 'quatro';
+          break;
+        case 5:
+          return 'cinco';
+          break;
+        case 7:
+          return 'sete';
+          break;
+        case 8:
+          return 'oito';
+          break;
+        case 9:
+          return 'nove';
+          break;
+        case 10:
+          return 'dez';
+          break;
+      }
     }
 
     corpo.appendChild(titulo);
@@ -86,6 +119,13 @@
 
     imagem.className = "small-image";
     document.getElementsByClassName('left-content')[0].appendChild(imagem);
+
+    for (let index = 1; index <= 10; index += 1) {
+      let numeroPorextenso = converteNumEmExtenso(index);
+      listaNordenada.appendChild(criaTag('li', 'innerText', numeroPorextenso));
+    }
+
+    document.getElementsByClassName('right-content')[0].appendChild(listaNordenada);
   </script>
 </body>
 
