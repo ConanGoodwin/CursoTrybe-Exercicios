@@ -64,6 +64,7 @@
     let principal = criaTag('main', 'className', 'main-content');
     let setor = criaTag('section', 'className', 'center-content');
     let paragrafo = criaTag('p', 'innerText', 'exercicios do bloco 05 dia 02');
+    let imagem = criaTag('img', 'src', 'https://picsum.photos/200');
 
     function criaTag(tipo, atributo, valorAtributo) {
       let tag = document.createElement(tipo);
@@ -77,11 +78,14 @@
     principal.appendChild(setor);
     setor.appendChild(paragrafo);
 
-    setor = criaTag('section', 'left-content', 'center-content');
+    setor = criaTag('section', 'className', 'left-content');
     principal.appendChild(setor);
 
-    setor = criaTag('section', 'right-content', 'center-content');
+    setor = criaTag('section', 'className', 'right-content');
     principal.appendChild(setor);
+
+    imagem.className = "small-image";
+    document.getElementsByClassName('left-content')[0].appendChild(imagem);
   </script>
 </body>
 
