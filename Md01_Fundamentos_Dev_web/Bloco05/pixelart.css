@@ -1,0 +1,32 @@
+table {
+  border-collapse: collapse;
+}
+
+.medium {
+  width: 30px;
+  height: 30px;
+}
+
+.small {
+  width: 20px;
+  height: 20px;
+}
+
+.border {
+  border: 1px solid black;
+  display: inline-block;
+  margin: 0;
+  word-spacing: 0;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}

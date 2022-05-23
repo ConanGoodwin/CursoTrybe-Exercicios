@@ -1,12 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="pixelart.css">
 </head>
 <body>
+  <header>
+    <div class="border medium red" onclick=selecionaCor('red')></div>
+    <div class="border medium green" onclick=selecionaCor('green')></div>
+    <div class="border medium blue" onclick=selecionaCor('blue')></div>
+    <div id="corAtual" class="border small"></div>
+  </header>
+
+  <main>
+    <table>
+      <!-- <tr>
+        <td id="11" class="border small" onclick=selecionaAtual("11")></td>
+        <td id="12" class="border small"></td>
+        <td id="13" class="border small"></td>
+      </tr>
+      <tr>
+        <td id="21"  class="border small"></td>
+        <td id="22"  class="border small"></td>
+        <td id="23"  class="border small"></td>
+      </tr>
+      <tr>
+        <td id="31"  class="border small"></td>
+        <td id="32"  class="border small"></td>
+        <td id="33"  class="border small"></td>
+      </tr> -->
+    </table>
+  </main>
   
 </body>
+
+<script src="pixelart.js"></script>
 </html>
