@@ -57,15 +57,19 @@ function criaBtnSextas(label) {
 function marcaFeriados() {
   let feriados = document.getElementsByClassName("holiday");
   let cor = feriados[0].style.backgroundColor;
+  let corLetra = feriados[0].style.color;
 
   if (cor != "rgb(0, 128, 0)") {
-    cor = "rgb(0,128,0)";
+    cor = "rgb(0, 128, 0)";
+    corLetra = "rgb(255, 255, 255)";
   } else {
     cor = "";
+    corLetra = "";
   }
 
   for (let chave in feriados) {
     feriados[chave].style.backgroundColor = cor;
+    feriados[chave].style.color = corLetra;
   }
 }
 
