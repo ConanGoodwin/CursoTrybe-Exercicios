@@ -1,3 +1,5 @@
+let estadoAnteriorSextas = [];
+
 function createDaysOfTheWeek() {
   const weekDays = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
   const weekDaysList = document.querySelector('.week-days');
@@ -17,6 +19,8 @@ function createDaysOfMonth() {
 
   for (let chave in dezDaysList) {
     let diaTagli = document.createElement('li');
+    diaTagli.addEventListener("mouseover",mouseEmCimaDia);
+    diaTagli.addEventListener("mouseleave",mouseForaDia);
 
     diaTagli.innerText = dezDaysList[chave];
     diaTagli.className = "day";
@@ -25,6 +29,7 @@ function createDaysOfMonth() {
     }
     if (dezDaysList[chave] === 4 || dezDaysList[chave] === 11 || dezDaysList[chave] === 18 || dezDaysList[chave] === 25) {
       diaTagli.className += " friday";
+      estadoAnteriorSextas.push(dezDaysList[chave]);
     }
 
     listaDia.appendChild(diaTagli);
@@ -65,18 +70,24 @@ function marcaFeriados() {
 }
 
 function marcaSextas() {
-  let feriados = document.getElementsByClassName("holiday");
-  let cor = feriados[0].style.backgroundColor;
+  let sextas = document.getElementsByClassName("friday");
+  let seSexta = sextas[0].innerText;
 
-  if (cor != "rgb(0, 128, 0)") {
-    cor = "rgb(0,128,0)";
-  } else {
-    cor = "";
+  for (let chave in sextas) {
+    if (seSexta != "sexta") {
+      sextas[chave].innerText = "sexta";
+    } else {
+      sextas[chave].innerText = estadoAnteriorSextas[chave];
+    }
   }
+}
 
-  for (let chave in feriados) {
-    feriados[chave].style.backgroundColor = cor;
-  }
+function mouseEmCimaDia(evento) {
+  evento.target.style.fontSize = "35px";
+}
+
+function mouseForaDia(evento) {
+  evento.target.style.fontSize = "";
 }
 
 createDaysOfTheWeek();
