@@ -31,7 +31,16 @@ function createDaysOfMonth() {
   }
 }
 
+function criaBtnFeriados(feriados) {
+  let btn = document.createElement('button');
+  btn.innerText = feriados;
+  btn.id = "btn-holiday";
+
+  document.querySelector('.buttons-container').appendChild(btn);
+}
+
 createDaysOfTheWeek();
 createDaysOfMonth();
+criaBtnFeriados("Feriados");
 
 // Escreva seu código abaixo.
