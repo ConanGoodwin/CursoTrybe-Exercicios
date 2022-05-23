@@ -35,8 +35,24 @@ function criaBtnFeriados(feriados) {
   let btn = document.createElement('button');
   btn.innerText = feriados;
   btn.id = "btn-holiday";
+  btn.addEventListener("click",marcaFeriados);
 
   document.querySelector('.buttons-container').appendChild(btn);
+}
+
+function marcaFeriados() {
+  let feriados = document.getElementsByClassName("holiday");
+  let cor = feriados[0].style.backgroundColor;
+
+  if (cor != "rgb(0, 128, 0)") {
+    cor = "rgb(0,128,0)";
+  } else {
+    cor = "";
+  }
+
+  for (let chave in feriados) {
+    feriados[chave].style.backgroundColor = cor;
+  }
 }
 
 createDaysOfTheWeek();
