@@ -7,9 +7,8 @@ for (let linha = 1; linha <= qtPixel; linha += 1) {
   tabelaPixel.appendChild(trAtual);
   for (let coluna =1; coluna <= qtPixel; coluna += 1) {
     let identificador = linha.toString() + ":" + coluna.toString();
-    let tagTd = criaTag('td',identificador,'border small','','');
+    let tagTd = criaTag('td',identificador,'border small','onclick','selecionaAtual("' + identificador + '")');
     trAtual.appendChild(tagTd);
-    tagTd.setAttribute('onclick','selecionaAtual("' + identificador + '")');
     // selecionaAtual("' + identificador + '")
   }
 }
@@ -39,7 +38,7 @@ function criaTag (tipo, id, classe, atributo, valor) {
   }
 
   if (atributo != "") {
-    tag[atributo] = valor;
+    tag.setAttribute(atributo,valor);
   }
 
   return tag;
