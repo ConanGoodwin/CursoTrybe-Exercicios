@@ -86,6 +86,14 @@ function marcaSextas() {
   }
 }
 
+function criaTarefa(tarefa) {
+  let tagTarefa = document.createElement('span');
+
+  tagTarefa.innerText = tarefa;
+
+  document.querySelector('.my-tasks').appendChild(tagTarefa);
+}
+
 function mouseEmCimaDia(evento) {
   evento.target.style.fontSize = "35px";
 }
@@ -98,5 +106,6 @@ createDaysOfTheWeek();
 createDaysOfMonth();
 criaBtnFeriados("Feriados");
 criaBtnSextas("Sexta-Feira");
+criaTarefa("cozinhar");
 
 // Escreva seu código abaixo.
