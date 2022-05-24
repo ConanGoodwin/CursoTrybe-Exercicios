@@ -89,7 +89,7 @@ function marcaFeriados() {
   for (let chave in feriados) {
     corLetra = feriados[chave].style.color;
     if (corLetra === "rgb(255, 255, 255)") {
-      corLetra = ""
+      corLetra = "";
     } else if (corLetra === "") {
       corLetra = "rgb(255, 255, 255)";
     }
@@ -161,6 +161,29 @@ function marcaTarefaNoDia(evento) {
   }
 }
 
+function addCompromisso(evento) {
+  let caixaTexto = document.getElementById("task-input");
+  let tagLiCompromisso = document.createElement("li");
+
+  console.log(evento.key);
+
+  if (evento.key === "Enter" || evento.key === undefined) {
+    console.log("oi");
+
+    if (caixaTexto.value === "") {
+      window.alert("ERRO! Nenhum compromoisso digitado!");
+      return false;
+    }
+
+    tagLiCompromisso.innerText = caixaTexto.value;
+    document.querySelector(".task-list").appendChild(tagLiCompromisso);
+    caixaTexto.value = "";
+
+    return true;
+  }
+  return false;
+}
+
 function mouseEmCimaDia(evento) {
   evento.target.style.fontSize = "35px";
 }
@@ -175,5 +198,9 @@ criaBtnFeriados("Feriados");
 criaBtnSextas("Sexta-Feira");
 criaTarefa("cozinhar");
 criaDivTarefa("rgb(0, 0, 255)");
+document.getElementById("btn-add").addEventListener("click", addCompromisso);
+document
+  .getElementById("task-input")
+  .addEventListener("keypress", addCompromisso);
 
 // Escreva seu código abaixo.
