@@ -32,6 +32,7 @@ function createDaysOfMonth() {
     let diaTagli = document.createElement("li");
     diaTagli.addEventListener("mouseover", mouseEmCimaDia);
     diaTagli.addEventListener("mouseleave", mouseForaDia);
+    diaTagli.addEventListener("click", marcaTarefaNoDia);
 
     diaTagli.innerText = dezDaysList[chave];
     diaTagli.className = "day";
@@ -77,17 +78,22 @@ function criaBtnSextas(label) {
 function marcaFeriados() {
   let feriados = document.getElementsByClassName("holiday");
   let cor = feriados[0].style.backgroundColor;
-  let corLetra = feriados[0].style.color;
+  let corLetra = "";
 
   if (cor != "rgb(0, 128, 0)") {
     cor = "rgb(0, 128, 0)";
-    corLetra = "rgb(255, 255, 255)";
   } else {
     cor = "";
-    corLetra = "";
   }
 
   for (let chave in feriados) {
+    corLetra = feriados[chave].style.color;
+    if (corLetra === "rgb(255, 255, 255)") {
+      corLetra = ""
+    } else if (corLetra === "") {
+      corLetra = "rgb(255, 255, 255)";
+    }
+
     feriados[chave].style.backgroundColor = cor;
     feriados[chave].style.color = corLetra;
   }
@@ -115,11 +121,11 @@ function criaTarefa(tarefa) {
 }
 
 function criaDivTarefa(cor) {
-  let divTarefa = document.createElement('div');
+  let divTarefa = document.createElement("div");
 
   divTarefa.className = "task";
   divTarefa.style.backgroundColor = cor;
-  divTarefa.addEventListener("click",marcaDesmarcaTarefa);
+  divTarefa.addEventListener("click", marcaDesmarcaTarefa);
 
   document.querySelector(".my-tasks").appendChild(divTarefa);
 }
@@ -129,6 +135,29 @@ function marcaDesmarcaTarefa(evento) {
     evento.target.className = "task selected";
   } else {
     evento.target.className = "task";
+  }
+}
+
+function marcaTarefaNoDia(evento) {
+  let statusTarefa = document.getElementsByClassName("task selected")[0];
+
+  if (statusTarefa != undefined) {
+    if (
+      evento.target.style.color === "" ||
+      evento.target.style.color === "rgb(255, 255, 255)"
+    ) {
+      evento.target.style.color = statusTarefa.style.backgroundColor;
+    } else {
+      if (evento.target.style.backgroundColor === "rgb(0, 128, 0)") {
+        evento.target.style.color = "rgb(255, 255, 255)";
+      } else {
+        evento.target.style.color = "";
+      }
+    }
+  } else if (evento.target.style.backgroundColor === "rgb(0, 128, 0)") {
+    evento.target.style.color = "rgb(255, 255, 255)";
+  } else {
+    evento.target.style.color = "";
   }
 }
 
