@@ -119,8 +119,17 @@ function criaDivTarefa(cor) {
 
   divTarefa.className = "task";
   divTarefa.style.backgroundColor = cor;
+  divTarefa.addEventListener("click",marcaDesmarcaTarefa);
 
   document.querySelector(".my-tasks").appendChild(divTarefa);
+}
+
+function marcaDesmarcaTarefa(evento) {
+  if (evento.target.className === "task") {
+    evento.target.className = "task selected";
+  } else {
+    evento.target.className = "task";
+  }
 }
 
 function mouseEmCimaDia(evento) {
