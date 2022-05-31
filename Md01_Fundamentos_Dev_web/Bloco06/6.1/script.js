@@ -10,3 +10,4 @@ function evitaPadrao(evento) {
 }
 
 HREF_LINK.addEventListener('click', evitaPadrao);
+INPUT_CHECKBOX.addEventListener('click', evitaPadrao);
