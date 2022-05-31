@@ -9,5 +9,14 @@ function evitaPadrao(evento) {
   alvo.preventDefault();
 }
 
-HREF_LINK.addEventListener('click', evitaPadrao);
-INPUT_CHECKBOX.addEventListener('click', evitaPadrao);
+function evitaNaoA(evento) {
+  const alvo = evento;
+
+  if (alvo.key !== "a") {
+    alvo.preventDefault();
+  }
+}
+
+HREF_LINK.addEventListener("click", evitaPadrao);
+INPUT_CHECKBOX.addEventListener("click", evitaPadrao);
+INPUT_TEXT.addEventListener("keypress", evitaNaoA);
