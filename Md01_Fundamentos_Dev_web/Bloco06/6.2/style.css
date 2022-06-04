@@ -1,0 +1,11 @@
+textarea {
+  resize: none;
+}
+
+.container {
+  margin-bottom: 20px;
+}
+
+header, form {
+  border: solid black 2px;
+}
