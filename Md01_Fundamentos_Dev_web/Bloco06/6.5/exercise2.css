@@ -45,9 +45,19 @@ html {
   .main-content {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
   }
 
   .main-content div {
-    width: 50%;
+    width: 45%;
+  }
+
+  .indice {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .indice li {
+    margin-left: 20px;
   }
 }
