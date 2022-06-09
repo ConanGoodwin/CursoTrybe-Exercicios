@@ -40,3 +40,10 @@ function mostraTamanho(objeto) {
 }
 
 mostraTamanho(lesson3);
+
+//Crie uma função para listar os valores de um objeto. Essa função deve receber um objeto como parâmetro
+function listaValoress(objeto) {
+  console.log(Object.values(objeto));
+}
+
+listaValoress(lesson2);
