@@ -49,7 +49,12 @@ customerInfo(order);
 
 const orderModifier = (order) => {
   // Adicione abaixo as informações necessárias.
+  // Olá Luiz Silva, o total do seu pedido de marguerita, pepperoni e Coca-Cola Zero é R$ 50,00
 
+  order.name = 'Luiz Silva';
+  order.payment.total = 50;
+
+  console.log(`Olá ${order.name}, o total do seu pedido de marguerita, pepperoni e Coca-Cola Zero é R$ ${order.payment.total},00`);
 }
 
 orderModifier(order);
