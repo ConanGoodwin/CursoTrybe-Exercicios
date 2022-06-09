@@ -26,3 +26,10 @@ function addTurno(objeto,chave,valor) {
 console.log(lesson2);
 addTurno(lesson2,'turno','noite');
 console.log(lesson2);
+
+//Crie uma função para listar as keys de um objeto. Essa função deve receber um objeto como parâmetro.
+function listaChaves(objeto) {
+  console.log(Object.keys(objeto));
+}
+
+listaChaves(lesson1);
