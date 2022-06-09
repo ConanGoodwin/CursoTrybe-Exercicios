@@ -33,3 +33,10 @@ function listaChaves(objeto) {
 }
 
 listaChaves(lesson1);
+
+//Crie uma função para mostrar o tamanho de um objeto.
+function mostraTamanho(objeto) {
+  console.log(Object.keys(objeto).length);
+}
+
+mostraTamanho(lesson3);
