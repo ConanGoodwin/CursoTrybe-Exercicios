@@ -8,6 +8,6 @@
 
 // console.log(resultado);
 
-const fatorial2 = (numero1, numero2) => (numero1 > 0) ? fatorial2(numero1 - 1, numero2 * numero1) : numero2;
+const fatorial = (numero1, numero2) => (numero1 > 1) ? fatorial(numero1 - 1, numero2 * (numero1 - 1)) : numero2;
 
-console.log(fatorial2(4,5));
+console.log(fatorial(6,6));
