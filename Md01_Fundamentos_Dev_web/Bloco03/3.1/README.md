@@ -1,4 +1,4 @@
-# DIA 1 BLOCO 3
+# DIA 01 BLOCO 03
 
 O objetivo dos exercí­cios desse dia foi colocar em prática o que havia aprendido sobre HTML básico. Para isso deveria criar meu Portfólio Web usando todo o aprendizado e Hospedar meu Portfólio Web no GitHub Pages[ConanGoodwin.github.io]
 
