@@ -1,8 +1,10 @@
-# DIA 1 BLOCO 3
+# DIA 01 BLOCO 03
 
-O objetivo dos exercí­cios desse dia foi colocar em prática o que havia aprendido sobre HTML básico. Para isso deveria criar meu Portfólio Web usando todo o aprendizado e Hospedar meu Portfólio Web no GitHub Pages[ConanGoodwin.github.io]
+_Na parte de conteudo criei uma lista das pessoas que fiz amizade na Trybe, adicionei uma imagem de uma URL externa e adicionei uma imagem que do meu computador, local._
 
-Os requisitos do exercÃ­cio são:
+_O objetivo dos exercí­cios desse dia foi colocar em prática o que havia aprendido sobre HTML básico. Para isso deveria criar meu Portfólio Web usando todo o aprendizado e Hospedar meu Portfólio Web no GitHub Pages[ConanGoodwin.github.io]_
+
+Os requisitos do exercí­cio são:
 
 1. Crie um novo diretório onde você vai desenvolver o seu portfólio. É importante que ele seja criado fora do seu diretório de exercícios, pois a sua manutenção daqui em diante será feita em outro ambiente.
 
