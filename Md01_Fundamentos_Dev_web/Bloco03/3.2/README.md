@@ -24,7 +24,7 @@ Os requisitos do exercício são:
 
 _**O.B.S.:**_ Usei para executar o meu código enquanto o desenvolvia, a extensão Live Server.
 
-4.O Portfólio Web deve ser estilizado usando as informações a seguir::
+4. O Portfólio Web deve ser estilizado usando as informações a seguir::
   * Defina fontes diferentes para o seu nome e para a descrição que você criou.
   * Defina uma cor base de background do seu Portfólio Web.
   * Altere o estilo das tags que você usou para destacar algumas informações, como sua nacionalidade e a cidade/estado onde mora.
