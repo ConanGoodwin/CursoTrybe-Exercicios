@@ -45,7 +45,7 @@ _Para fixar II :foguete:, você não deve atribuir nenhuma classe ou id aos comp
 
 _Na parte do conteudo Combinações e Classes Descendentes, dei um passo mais a fundo na dinâmica do CSS, aprendendo sobre combinações de classes em elementos HTML e também a como utilizar a descendência para aplicar estilizações à elementos específicos._
 
-_Para fixar_ :foguete:
+_Para fixar_ :rocket:
 (combClasseFilhos.html e comb_style.css)
 
 1 - Faça com que todos os itens de Listas Ordenadas tenham uma cor de fundo amarela. Se a numeração do item for PAR, faça a cor de fonte ser verde. Se o número for considerado ÍMPAR, utilize a propriedade text-transform para deixar o texto maiúsculo. (Dica: combinar classes pode ser útil aqui).
