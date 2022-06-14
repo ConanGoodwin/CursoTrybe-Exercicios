@@ -31,7 +31,7 @@ _Para fixar I, em agrupamento.html:_
 
 Dica: Nesse [link](https://developer.mozilla.org/pt-BR/docs/Web/CSS/Pseudo-classes), você irá encontrar a documentação sobre todas as pseudoclasses do CSS.
 
-_Para fixar II :foguete:, você não deve atribuir nenhuma classe ou id aos componentes, mas apenas utilizar pseudoclasses para individualizar cada elemento(fix.html e fixa_style.css):_
+_Para fixar II :rocket:, você não deve atribuir nenhuma classe ou id aos componentes, mas apenas utilizar pseudoclasses para individualizar cada elemento(fix.html e fixa_style.css):_
 
 1 - Estilize as divs para que, ao passar o cursor por cima das mesmas, elas ganhem uma borda.
 
