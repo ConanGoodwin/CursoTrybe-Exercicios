@@ -34,9 +34,13 @@ Dica: Nesse [link](https://developer.mozilla.org/pt-BR/docs/Web/CSS/Pseudo-class
 _Para fixar II :foguete:, você não deve atribuir nenhuma classe ou id aos componentes, mas apenas utilizar pseudoclasses para individualizar cada elemento(fix.html e fixa_style.css):_
 
 1 - Estilize as divs para que, ao passar o cursor por cima das mesmas, elas ganhem uma borda.
+
 2 - Faça cada div ter uma cor própria.
+
 3 - Estilize cada uma das tags h3.
+
 4 - Faça a terceira div ser maior que as demais.
+
 5 - Deixe as tags ímpares h3 com o texto em itálico.
 
 _Na parte do conteudo Combinações e Classes Descendentes, dei um passo mais a fundo na dinâmica do CSS, aprendendo sobre combinações de classes em elementos HTML e também a como utilizar a descendência para aplicar estilizações à elementos específicos._
