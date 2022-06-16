@@ -17,29 +17,38 @@ _Na parte de conteudo Aplicando elementos HTML de acordo com o sentido, vi tags 
 _Na parte do conteudo Elementos de bloco e elementos inline, aprendi sobre as propriedades display inline e display block, e sobre a propriedade display inline-block_
 
 _Para fixar:_
+(conteudo.html e conteudo.css)
 
 1 - Para realizar este exercício copie o código HTML abaixo. Em seguida, faça a implementação das propriedades CSS e, se necessário, faça adições à estrutura HTML existente, para que o resultado final seja similar à imagem referência.
 
   * Lembre-se que a estrutura da página deve ser mantida para que a semântica do código seja preservada.
 
 
-O objetivo dos exercí­cios desse dia finalizar a primeira versão do seu Portfólio Web adicionando seletores e CSS de layout e atualizar meu Portfólio Web no no GitHub Pages[ConanGoodwin.github.io], aplicando layout mais consistente usando elementos de bloco e inline e salvando todas as estilizações dentro de um arquivo externo style.css.
+O objetivo desses exercícios é colocar em prática o que você acabou de aprender sobre HTML semântico.
+Para tal, criaremos uma página que apresenta um dos animais mais impressionantes que existem: o [Stomatopoda](https://www.nationalgeographic.com/science/article/natures-most-amazing-eyes-just-got-a-bit-weirder). A estilização da página fica a seu critério.
 
 Os requisitos do exercício são:
 
-1. Entre no diretório que você criou no dia anterior.
+1. Adicione um cabeçalho na página contendo o título Soco a 80km/h: Conheça o Stomatopoda.
 
-2. Procure a tag <style></style>, onde você fez as alterações ontem. Mova todo o conteúdo da tag style e coloque em um arquivo style.css.
+2. Adicione um conjunto de links que representam a área de navegação do site.
+  * Crie um link chamado Página Inicial.
+  * Crie um link chamado Sobre.
+  * Crie um link chamado Contato.
 
-3. Adicione as novas alterações dentro do arquivo style.css.
-Não se esqueça de importar esse arquivo na sua página;
+3. Crie um artigo que vai conter os fatos interessantes sobre o Stomatopoda. O artigo terá o subtítulo Fatos sobre o Stomatopoda. Segue [um site animal](https://theoatmeal.com/comics/mantis_shrimp) de inspiração para pegar fatos.
 
-4. Depois de importar o arquivo style.css, você já pode remover a tag style do seu documento.
+4. Divida o artigo em seções, organizando-o da seguinte forma:
+  * Uma primeira seção contendo informações gerais a respeito do animal. O subtítulo para essa seção fica a seu         critério. É necessário que conste nessa seção seu nome científico, que é Odontodactylus scyllarus, em itálico. Além disso, é preciso que haja informação tabular a respeito de sua classificação científica, em específico: Reino, Filo, Subfilo, Classe, Subclasse e Ordem. Tais informações você consegue obter na [Wikipedia](https://pt.wikipedia.org/wiki/Stomatopoda).
+  * As outras seções dizem respeito aos fatos interessantes que você escolheu acerca do animal. Para cada fato escolhido você vai criar uma seção.
+  * Adicione, para cada seção, um subtítulo referente ao fato escolhido.
+  * Adicione, para cada seção, parágrafo(s) descrevendo o fato escolhido. Destaque características impressionantes referentes ao fato que você escolheu, de forma a reforçar a unicidade do Stomatopoda. Por exemplo: se você criar uma seção detalhando o soco potente do animal, seria interessante destacar a velocidade desse soco (80km/h) em negrito.
+  * Adicione, para cada seção, uma imagem, como forma de ilustrar o fato.
+  * Adicione, por fim, uma seção de referências bibliográficas, contendo uma lista de todos os links que foram usados como base para compilar a página em questão.
 
-5. O Portfólio Web deve ser estilizado usando as informações a seguir::
-  * Coloque seu nome, sua foto e a descrição que você escreveu sobre você dentro de blocos.
-  * A descrição deve ficar ao lado da foto.
-  * Centralize seu nome na página.
-  * Use padding e coloque uma cor de fundo na sua foto que seja diferente da cor de fundo do resto da página.
-  * Adicione margin e padding nos elementos que julgar necessário.
-  * Coloque estilo somente nos itens ímpares da lista das suas habilidades.
+5. Adicione um conteúdo adjacente ao artigo, disponibilizando um link para este vídeo, que mostra o animal em ação.
+
+6. Adicione um rodapé na página, mostrando algo do gênero:
+  * "Conteúdo compilado por <insere seu nome>, <ano atual>".
+
+Obs: para esse exercício, é obrigatório fazer uso de, no mínimo, 6 elementos com as seguintes tags: header, nav, article, section, h1, h2, h3, aside, footer, table e img.
