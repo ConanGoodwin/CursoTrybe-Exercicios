@@ -27,15 +27,21 @@
 
   <script>
     function changeContent() {
-      // const celulas = document.getElementsByTagName('tr');
-      const tabela = document.getElementById('myTable');
-      const linha = prompt('Digite o numero da linha a ser modificada:');
-      const coluna = prompt('Digite o numero da coluna a ser modificada:');
-      const celula = tabela.children[0].children[linha - 1].children[coluna - 1];
-      const texto = prompt('Digite o texto a ser inserido:');
+      try {
+        // const celulas = document.getElementsByTagName('tr');
+        const tabela = document.getElementById('myTable');
+        const linha = prompt('Digite o numero da linha a ser modificada:');
+        const coluna = prompt('Digite o numero da coluna a ser modificada:');
+        // throw new Error('Linha e/ou coluna invalida!');
+        const celula = tabela.children[0].children[linha - 1].children[coluna - 1];
+        const texto = prompt('Digite o texto a ser inserido:');
 
-      // celulas[linha - 1].children[coluna - 1].innerHTML = texto;
-      celula.innerHTML = texto;
+        // celulas[linha - 1].children[coluna - 1].innerHTML = texto;
+        celula.innerHTML = texto;
+      } catch (error) {
+        alert(`${error.message}
+        'Linha e/ou coluna invalida!'`);
+      }
     }
   </script>
 </body>
