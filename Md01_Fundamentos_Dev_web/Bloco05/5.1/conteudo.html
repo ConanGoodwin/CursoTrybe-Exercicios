@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      <h2 id="page-title">Título</h2>
+      <p id="paragraph">Dê uma cor para este parágrafo!</p>
+      <h4 id="subtitle">Subtítulo</h4>
+      <p id="second-paragraph">Segundo parágrafo!</p>
+    </header>
+    <script>
+      const paragraph = document.getElementById("paragraph");
+      const titulo = document.getElementsByTagName("h2")[0];
+      const segParagrafo = document.getElementById("second-paragraph");
+      const subTitulo = document.getElementById("subtitle");
+
+      titulo.innerText = "Forest Gump";
+      paragraph.style.color = "red";
+      subTitulo.innerText = "Um dos melhores filmes já feito.";
+      segParagrafo.innerText = "Sem criatividade no momento para criar um texto para o segundo paragrafo.";
+    </script>
+  </body>
+</html>
