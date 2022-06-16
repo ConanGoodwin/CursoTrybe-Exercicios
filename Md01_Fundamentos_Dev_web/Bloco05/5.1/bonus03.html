@@ -22,14 +22,18 @@
     function insert_Row() {
       const qtTr = document.getElementsByTagName('tr').length;
       const tagTr = document.createElement('tr');
-      const tagTd1 = document.createElement('td');
-      const tagTd2 = document.createElement('td');
+      // const tagTd1 = document.createElement('td');
+      // const tagTd2 = document.createElement('td');
 
       document.getElementById('sampleTable').appendChild(tagTr);
-      tagTd1.innerText = `Row${qtTr +1} cell1`;
-      tagTr.appendChild(tagTd1);
-      tagTd2.innerText = `Row${qtTr +1} cell2`;
-      tagTr.appendChild(tagTd2);
+      // tagTd1.innerText = `Row${qtTr +1} cell1`;
+      // tagTr.appendChild(tagTd1);
+      // tagTd2.innerText = `Row${qtTr +1} cell2`;
+      // tagTr.appendChild(tagTd2);
+      tagTr.appendChild(document.createElement('td'));
+      tagTr.appendChild(document.createElement('td'));
+      tagTr.children[0].innerHTML = `Row${qtTr +1} cell1`;
+      tagTr.children[1].innerHTML = `Row${qtTr +1} cell2`;
     }
   </script>
 </body>
