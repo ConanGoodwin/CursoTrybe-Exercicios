@@ -30,10 +30,16 @@
       // tagTr.appendChild(tagTd1);
       // tagTd2.innerText = `Row${qtTr +1} cell2`;
       // tagTr.appendChild(tagTd2);
-      tagTr.appendChild(document.createElement('td'));
-      tagTr.appendChild(document.createElement('td'));
-      tagTr.children[0].innerHTML = `Row${qtTr +1} cell1`;
-      tagTr.children[1].innerHTML = `Row${qtTr +1} cell2`;
+      
+      // tagTr.appendChild(document.createElement('td'));
+      // tagTr.appendChild(document.createElement('td'));
+      // tagTr.children[0].innerHTML = `Row${qtTr +1} cell1`;
+      // tagTr.children[1].innerHTML = `Row${qtTr +1} cell2`;
+
+      for (let index = 0; index < 2; index += 1) {
+        tagTr.appendChild(document.createElement('td'));
+        tagTr.children[index].innerHTML = `Row${qtTr + 1} cell${index + 1}`;
+      }
     }
   </script>
 </body>
