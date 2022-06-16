@@ -1,0 +1,66 @@
+main {
+  width: 20%;
+  height: 100%;
+  border: 5px outset rgb(255, 29, 9);
+  background-color: rgb(255, 29, 9);
+}
+
+p {
+  text-align: right;
+  margin: 0px;
+  padding: 5px 10px;
+}
+
+#operacaoAtual {
+  font-weight: bold;
+}
+
+#tela {
+  background-color: white;
+  border: 2px groove rgb(27, 27, 27);
+}
+
+#tela,
+#teclado,
+#teclas td {
+  margin: 3px 5px;
+}
+
+/* #teclas {
+  border: 1px solid black;
+} */
+
+#teclas {
+  text-align: center;
+  width: 100%;
+  height: 50px;
+  background-color: rgb(255, 41, 21);
+}
+
+#teclas td {
+  border: 3px outset black;
+  background-color: rgb(160, 170, 170);
+  box-shadow: 0 0 1em black;
+}
+
+#teclas td:active {
+  border: 30px groove black;
+  width: 65px;
+  height: 29px;
+  transition: width 2s, height 4s;
+  transition: border 2s;
+}
+
+#teclas td:hover {
+  background-color: rgb(199, 204, 204);
+}
+
+#teclado, #teclas {
+  height: 200px;
+}
+
+td.coluna-fina {
+  /* display:block;
+  height: 30px; */
+  /* column-width: 1px; */
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section id="tela">
+      <p id="operacaoAnterior">...</p>
+      <p id="operacaoAtual">0</p>
+    </section>
+    <section id="teclado">
+      <table id="teclas"> 
+        <tr>
+          <td onclick="operacao('z')">Z</td>
+          <td onclick="operacao('/')">/</td>
+          <td onclick="operacao('*')">*</td>
+          <td onclick="operacao('-')"  class="coluna-fina">-</td>
+        </tr>
+        <tr>
+          <td onclick="operacao('7')">7</td>
+          <td onclick="operacao('8')">8</td>
+          <td onclick="operacao('9')">9</td>
+          <td onclick="operacao('+')" rowspan="2" class="coluna-fina">+</td>
+        </tr>
+        <tr>
+          <td onclick="operacao('4')">4</td>
+          <td onclick="operacao('5')">5</td>
+          <td onclick="operacao('6')">6</td>
+        </tr>
+          <td onclick="operacao('1')">1</td>
+          <td onclick="operacao('2')">2</td>
+          <td onclick="operacao('3')">3</td>
+          <td onclick="operacao('=')" rowspan="2"  class="coluna-fina">=</td>
+        <tr>
+          <td onclick="operacao('0')" colspan="2">0</td>
+          <td onclick="operacao(',')">,</td>
+        </tr>
+        <tr>
+
+        </tr>
+      </table>
+    </section>
+  </main>
+  
+</body>
+
+<script src="./operacoes.js"></script>
+</html>
