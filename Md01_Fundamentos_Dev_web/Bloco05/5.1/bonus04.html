@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8 />
+  <title>Change the content of a cell</title>
+</head>
+
+<body>
+  <table id="myTable" border="1">
+    <tr>
+      <td>Row1 cell1</td>
+      <td>Row1 cell2</td>
+    </tr>
+    <tr>
+      <td>Row2 cell1</td>
+      <td>Row2 cell2</td>
+    </tr>
+    <tr>
+      <td>Row3 cell1</td>
+      <td>Row3 cell2</td>
+    </tr>
+  </table>
+  <form>
+    <input type="button" onclick="changeContent()" value="Change content">
+  </form>
+
+  <script>
+    function changeContent() {
+      try {
+        // const celulas = document.getElementsByTagName('tr');
+        const tabela = document.getElementById('myTable');
+        const linha = prompt('Digite o numero da linha a ser modificada:');
+        const coluna = prompt('Digite o numero da coluna a ser modificada:');
+        // throw new Error('Linha e/ou coluna invalida!');
+        const celula = tabela.children[0].children[linha - 1].children[coluna - 1];
+        const texto = prompt('Digite o texto a ser inserido:');
+
+        // celulas[linha - 1].children[coluna - 1].innerHTML = texto;
+        celula.innerHTML = texto;
+      } catch (error) {
+        alert(`${error.message}
+        'Linha e/ou coluna invalida!'`);
+      }
+    }
+  </script>
+</body>
+
+</html>

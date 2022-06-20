@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset=utf-8 />
+  <title>Change the content of a cell</title>
+  <style type="text/css">
+    body {
+      margin: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <table id="myTable" border="1">
+  </table>
+  <form>
+    <input type="button" onclick="createTable()" value="Create the table">
+  </form>
+
+  <script>
+    function createTable() {
+      try {
+        const tabela = document.getElementById('myTable');
+        const linhas = prompt('Digite a quantidade de linhas:');
+        const colunas = prompt('Digite a quantidade de colunas:');
+       
+        for (let index = 0; index < linhas; index += 1) {
+          tabela.appendChild(document.createElement('tr'));
+          for (let indColuna = 0; indColuna < colunas; indColuna += 1) {
+            tabela.children[index].appendChild(document.createElement('td'));
+            tabela.children[index].children[indColuna].innerHTML = `Row-${index} Colum-${indColuna}`;
+          }
+        }
+      } catch (error) {
+        alert(`${error.message}
+        'Linha e/ou coluna invalida!'`);
+      }
+    }
+  </script>
+</body>
+
+</html>
