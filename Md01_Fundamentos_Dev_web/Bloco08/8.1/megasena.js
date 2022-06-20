@@ -1,5 +1,5 @@
 const aposta = [2, 1, 3, 4, 5, 6].sort((a, b) => a - b);
-const qtNumeros = aposta.length;
+const qtNumeros = aposta.length; // 6
 const rangeMaximo = 7;
 
 const valida = (number1, number2) =>
