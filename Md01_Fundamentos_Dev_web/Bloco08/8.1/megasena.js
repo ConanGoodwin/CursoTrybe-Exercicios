@@ -2,7 +2,7 @@ const aposta = [2, 1, 3, 4, 5, 6].sort((a, b) => a - b); //aposta com os numeros
 const qtNumeros = aposta.length; // 6 para mega-sena, define a quantidade de numeros a serem sorteados.
 const rangeMaximo = 7; // 60 para a mega-sena, este numero tem de obrigatoriamente ser maior que o armazendo em qtNumeros.
 
-// função que compara a igualdade entre jogo apostado e o sorteado
+// função que compara a igualdade entre jogo apostado e o sorteado, comparação de arrays
 const valida = (number1, number2) =>
   number1.every((value, index) => value === number2[index]);
 
