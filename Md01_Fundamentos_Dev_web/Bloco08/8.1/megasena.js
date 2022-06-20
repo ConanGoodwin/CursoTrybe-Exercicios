@@ -21,7 +21,7 @@ const sorteio = (apostado, funcao) => {
   };
 
   const sorte = sorteia([]);
-  console.log(`Numeros soretados: ${sorte}`);
+  console.log(`Numeros sorteados: ${sorte}`);
   console.log(`Numeros apostados: ${apostado}`);
 
   return funcao(sorte, apostado) ? "acertou os numeros" : "Não acertou os numeros";
