@@ -21,5 +21,7 @@ const dragon = {
 const battleMembers = { mage, warrior, dragon };
 
 const danoDragao = () => Math.floor(Math.random() * (dragon.strength - 15) + 16);
+const danoWarrior = () => Math.floor(Math.random() * (warrior.strength * warrior.weaponDmg - warrior.strength) + warrior.strength);
 
 console.log(danoDragao());
+console.log(danoWarrior());
