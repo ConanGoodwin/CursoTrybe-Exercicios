@@ -11,35 +11,43 @@ horarios.forEach(() => {
 });
 let atualCompromisso = 0;
 
-function verificaCompromisso(index, texto) {
+function verificaCompromisso(index) {
   let compromisso = {
     legenda: '',
     link: ''
   };
+  let texto = horarios[atualCompromisso];
+  let proxTexto = horarios[atualCompromisso + 1];
 
-  if (divPrimeiroEvento.children[1].children[index].innerText.substring(0, texto.length) === texto) {
-    compromisso.legenda = divPrimeiroEvento.children[1].children[index].innerText;
-    for (let i = index + 1; i < index + 4; i += 1) {
-      if (divPrimeiroEvento.children[1].children[i].children[0]) {
-        compromisso.link =
-          divPrimeiroEvento.children[1].children[i].children[0].href;
+  if (divPrimeiroEvento.children[1].children[index]) {
+    const txtComp = divPrimeiroEvento.children[1].children[index].innerText.substring(0, texto.length);
+    if (txtComp === texto || txtComp === proxTexto) {
+      compromisso.legenda = divPrimeiroEvento.children[1].children[index].innerText;
+      for (let i = index + 1; i < index + 4; i += 1) {
+        if (divPrimeiroEvento.children[1].children[i].innerText) {
+          compromisso.legenda += divPrimeiroEvento.children[1].children[i].innerText;
+        }
+        if (divPrimeiroEvento.children[1].children[i].children[0]) {
+          compromisso.link =
+            divPrimeiroEvento.children[1].children[i].children[0].href;
+        }
+      }
+      if (txtComp === proxTexto) {
+        atualCompromisso += 1;  
       }
     }
-    
   }
   return compromisso
 }
 
-const geraCompromisso = (iEvento, iHtml, texto) => {
-  txtEvento[iEvento] = verificaCompromisso(iHtml, texto).legenda;
-  txtLink[iEvento] = verificaCompromisso(iHtml, texto).link;
+const geraCompromisso = (iEvento, iHtml) => {
+  txtEvento[iEvento] = verificaCompromisso(iHtml).legenda;
+  txtLink[iEvento] = verificaCompromisso(iHtml).link;
 }
 
 for (let index = 0; index < 200; index += 1) {
-  let texto = horarios[atualCompromisso];
-
   if (txtEvento[atualCompromisso]  === '') {
-    geraCompromisso(atualCompromisso, index, texto);
+    geraCompromisso(atualCompromisso, index);
   } else {
     atualCompromisso += 1;
   }
