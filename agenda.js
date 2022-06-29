@@ -1,8 +1,27 @@
-const divTitulo = document.getElementsByClassName("p-rich_text_section")[0];
+const horarios = ["[*] 13h", "14h", "14h40", "15h", "16h", "17h", "18h", "[*] 18h40", "19h20", "19h30", "19h40"];
+const divTituloGeral = document.getElementsByClassName("p-rich_text_section")
+let position = 0;
+for (let index = 0; index < divTituloGeral.length; index += 1) {
+  position = index;
+  if (document.getElementsByClassName("p-rich_text_section")[index].children[1].innerHTML.substring(0, 7) === " Agenda") {
+    break;
+  }
+}
+const divTitulo = document.getElementsByClassName("p-rich_text_section")[position];
 const txtTitulo = divTitulo.children[1].innerText;
+const divEventoGeral = document.getElementsByClassName("p-rich_text_block");
+for (let index = 0; index < divEventoGeral.length; index += 1) {
+  position = index;
+  const localiza = document.getElementsByClassName("p-rich_text_block")[index].children[1].innerText.substring(0,3);
+  // console.log(localiza);
+  // console.log(horarios.some((horario) => horario.substring(0,3) === localiza));
+  if (horarios.some((horario) => horario.substring(0,3) === localiza)) {
+    break;
+  }
+}
 const divPrimeiroEvento =
-  document.getElementsByClassName("p-rich_text_block")[0];
-const horarios = ["[*] 13h", "14h", "15h", "16h", "18h", "[*] 18h40", "19h20", "19h30"];
+  document.getElementsByClassName("p-rich_text_block")[position];
+
 let txtEvento = [];
 let txtLink = [];
 horarios.forEach(() => {
@@ -32,8 +51,10 @@ function verificaCompromisso(index) {
             divPrimeiroEvento.children[1].children[i].children[0].href;
         }
       }
-      if (txtComp === proxTexto) {
-        atualCompromisso += 1;  
+      while (txtComp !== proxTexto && atualCompromisso < horarios.length - 1) {
+        atualCompromisso += 1;
+        proxTexto = horarios[atualCompromisso];
+        console.log(proxTexto);
       }
     }
   }
