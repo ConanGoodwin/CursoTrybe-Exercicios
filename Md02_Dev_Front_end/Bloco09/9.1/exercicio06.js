@@ -21,11 +21,13 @@ const handleError = (errorReason) =>
 // crie a função sendMarsTemperature abaixo
 
 const sendMarsTemperature = (callback, erro) => {
+  const time = messageDelay();
+  
   setTimeout(() => {
     const marsTemp = getMarsTemperature();
-    if (messageDelay > 3000) erro();
+    if (time > 3000) erro('Robot is busy');
     else callback(marsTemp);
-  }, messageDelay()); // imprime "Mars temperature is: 20 degree Celsius", por exemplo
+  }, time); // imprime "Mars temperature is: 20 degree Celsius", por exemplo
 };
 
 // imprime "It is currently 47ºF at Mars", por exemplo, ou "Error getting temperature: Robot is busy"
