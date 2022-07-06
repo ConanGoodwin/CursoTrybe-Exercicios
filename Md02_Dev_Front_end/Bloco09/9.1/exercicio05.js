@@ -19,7 +19,7 @@ const sendMarsTemperature = (callback) => {
   setTimeout(() => {
     const marsTemp = getMarsTemperature();
     callback(marsTemp);
-  }, messageDelay); // imprime "Mars temperature is: 20 degree Celsius", por exemplo
+  }, messageDelay()); // imprime "Mars temperature is: 20 degree Celsius", por exemplo
 }
 
 sendMarsTemperature(temperatureInFahrenheit); // imprime "It is currently 47ºF at Mars", por exemplo
