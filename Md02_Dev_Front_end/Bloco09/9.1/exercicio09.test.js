@@ -2,9 +2,6 @@
 const { getPokemonDetails } = require("./exercicio08");
 
 describe("A função getPokemonDetails", () => {
-  const filtro1 = ({ name }) => name === 'Bulbasau';
-  const filtro2 = ({ name }) => name === 'Bulbasaur';
-
   it("retorna um pokemon que existe no banco de dados", (done) => {
     // Escreva aqui seu código
     const esperado = 'Olá, seu pokémon é o Bulbasaur, o tipo dele é Grass e a habilidade principal dele é Razor Leaf';
@@ -18,7 +15,7 @@ describe("A função getPokemonDetails", () => {
       }
     }
 
-    getPokemonDetails(filtro2, callback)
+    getPokemonDetails(({ name }) => name === 'Bulbasaur', callback)
   });
 
   it("retorna erro quando procuramos um pokemon que não existe no banco de dados", (done) => {
@@ -34,7 +31,7 @@ describe("A função getPokemonDetails", () => {
       }
     }
 
-    getPokemonDetails(filtro1, callback)
+    getPokemonDetails(({ name }) => name === 'Bulbasau', callback)
   });
 
 });
