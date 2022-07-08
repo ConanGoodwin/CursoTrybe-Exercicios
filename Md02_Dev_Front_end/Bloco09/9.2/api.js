@@ -5,18 +5,20 @@ const pErro= document.getElementById('erro');
 
 async function converteDeDolarPReal(priceUsd) {
   let precoReal= 0;
-
-  await fetch(urlReal)
-    .then((response) => response.json())
-    .then(({ usd }) => precoReal = usd.brl / priceUsd)
-    .catch((erro) => pErro.innerText = erro);
+  try {
+    const resposta = await fetch(urlReal);
+    const { usd } = await resposta.json();
+    precoReal = usd.brl * priceUsd;
+  } catch(erro) {
+    pErro.innerText = erro;
+  }
   
   return precoReal;
 }
 
-function montaLi({ id, symbol, priceUsd }) {
+async function montaLi({ id, symbol, priceUsd }) {
   const li = document.createElement('li');
-  li.innerText = `${id}(${symbol}): ${priceUsd} em Real: ${converteDeDolarPReal(priceUsd)}`;
+  li.innerText = `${id}(${symbol}): ${priceUsd} em Real: ${await converteDeDolarPReal(priceUsd)}`;
   lista.appendChild(li);  
 }
 
