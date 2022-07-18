@@ -1,25 +1,31 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Header from './header';
+import Content from './content';
+import Footer from './footer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// const Task = (value) => {
+//   return (
+//     <li>{value}</li>
+//   );
+// }
+
+class App extends React.Component {
+  compromissos = ['fazer exercicio','trocar de maquina','rezar'];
+
+  render() { 
+    return (
+      <div className="App">
+        <Header />
+        <Content />
+        <Footer />
+        {/* <ul>
+          {this.compromissos.map((item) => Task(item))}
+        </ul>  */}
+      </div>
+    );
+}
 }
 
 export default App;
