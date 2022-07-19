@@ -25,7 +25,7 @@ const conteudos = [
 
 const criaLi = (obj, indice) => {
   return (
-    <li key={indice}>
+    <li key={indice} className="card">
       O conteúdo é: {obj.conteudo} <br />
       Status: {obj.status} <br />
       Bloco: {obj.bloco}

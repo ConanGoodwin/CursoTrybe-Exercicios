@@ -4,6 +4,8 @@ import './App.css';
 import Header from './header';
 import Content from './content';
 import Footer from './footer';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'reactstrap';
 
 // const Task = (value) => {
 //   return (
@@ -19,6 +21,7 @@ class App extends React.Component {
       <div className="App">
         <Header />
         <Content />
+        <Button color="danger">Danger!</Button>
         <Footer />
         {/* <ul>
           {this.compromissos.map((item) => Task(item))}
