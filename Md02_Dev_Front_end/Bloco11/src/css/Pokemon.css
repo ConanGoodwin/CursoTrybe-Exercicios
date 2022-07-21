@@ -1,0 +1,23 @@
+.card {
+  display: flex;
+  border: 1px solid black;
+  border-radius: 5%;
+  box-shadow: 5px 5px 5px lightblue;
+  margin: 5px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-body {
+  display: inline-block;
+  margin: 5px;
+  margin-left: 10px;
+}
+
+.card-img-top {
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.408);
+  border-radius: 40%;
+  margin: 5px;
+}
