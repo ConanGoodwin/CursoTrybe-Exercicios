@@ -1,25 +1,49 @@
-import logo from './logo.svg';
+// ./App.js
 import './App.css';
+import React from 'react';
+import ColorBox from './components/ColorBox';
+import MyContext from './MyContext';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      color: 'blue',
+    }
+  }
+
+  handleClick = () => {
+    const { color } = this.state;
+
+    switch (color) {
+      case 'blue':
+        this.setState({color: 'red'});
+        break;
+      case 'red':
+        this.setState({color: 'yellow'});
+        break;
+      case 'yellow':
+        this.setState({color: 'blue'});
+        break;
+      default:
+        break;
+    }
+  }
+
+  render() {
+    const { color } = this.state;
+
+    const objContext = {
+      color,
+      handleClick: this.handleClick,
+    }
+
+    return (
+      <MyContext.Provider value={objContext}>
+        <ColorBox />
+      </MyContext.Provider>
+    );
+  }
 }
-
 export default App;
