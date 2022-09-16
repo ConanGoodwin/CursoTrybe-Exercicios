@@ -6,12 +6,12 @@ function FormStudent() {
   const { fullName, age, city, module, } = formStudent;
 
   const handleChangeDefault = ({target: { value }}, name) => {
-    setFormStudent({...formStudent, [name]: value});
+    setFormStudent((prev) => ({...prev, [name]: value}));
   }
 
   const saveStudent = (event) => {
     event.preventDefault();
-    setStudents([...students, {fullName, age, city, module}])
+    setStudents((prev) => ([...prev, {fullName, age, city, module}]))
     setFormStudent({
       fullName: '',
       age: 0,
