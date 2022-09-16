@@ -1,24 +1,22 @@
 import { useState } from "react";
 import StudentContext from "./contexts/StudentContext";
 
+const INITIAL_STATE = {
+  fullName: '',
+  age: 0,
+  city: '',
+  module: 'Fundamentos',
+}
+
 function StudentProvider({children}) {
-  const [fullName, setFullName] = useState('');
-  const [age, setAge] = useState('');
-  const [city, setCity] = useState('');
-  const [module, setModule] = useState('Fundamentos');
+  const [formStudent, setFormStudent] = useState(INITIAL_STATE)
   const [students, setStudents] = useState([]);
 
   const objProvider = {
-    fullName,
-    setFullName,
-    age,
-    setAge,
-    city,
-    setCity,
-    module,
-    setModule,
     students,
     setStudents,
+    formStudent,
+    setFormStudent
   }
 
   return (

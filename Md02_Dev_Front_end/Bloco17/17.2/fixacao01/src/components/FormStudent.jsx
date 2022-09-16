@@ -2,11 +2,12 @@ import { useContext } from "react";
 import StudentContext from "../APIContext/contexts/StudentContext";
 
 function FormStudent() {
-  const { fullName, setFullName, age, setAge } = useContext(StudentContext);
-  const { city, setCity, module, setModule, students, setStudents } = useContext(StudentContext);
+  const { formStudent, setFormStudent, students, setStudents } = useContext(StudentContext);
+  const { fullName, age, city, module, } = formStudent;
 
-  const handleChange = ({target}, func) => {
-    func(target.value);
+  const handleChangeDefault = ({target: { value }}, name) => {
+    setFormStudent({...formStudent, [name]: value});
+    console.log(formStudent);
   }
 
   const saveStudent = (event) => {
@@ -23,7 +24,7 @@ function FormStudent() {
          name="fullName"
          value={fullName}
          id="txtFullName"
-         onChange={(target) => handleChange(target, setFullName)}
+         onChange={(target) => handleChangeDefault(target, 'fullName')}
         />
       </label>
       <label htmlFor="txtAge">
@@ -33,7 +34,7 @@ function FormStudent() {
          name="age"
          value={age}
          id="txtAge"
-         onChange={(target) => handleChange(target, setAge)}
+         onChange={(target) => handleChangeDefault(target, 'age')}
         />
       </label>
       <label htmlFor="txtCity">
@@ -43,7 +44,7 @@ function FormStudent() {
          name="city"
          value={city}
          id="txtCity"
-         onChange={(target) => handleChange(target, setCity)}
+         onChange={(target) => handleChangeDefault(target, 'city')}
         />
       </label>
       <label htmlFor="chkModuloFundamentos">
@@ -53,7 +54,7 @@ function FormStudent() {
           id="chkModuloFundamentos"
           value={ 'Fundamentos' }
           checked={ module === 'Fundamentos' }
-          onChange={(target) => handleChange(target, setModule)}
+          onChange={(target) => handleChangeDefault(target, 'module')}
         />
         Fundamentos
       </label>
@@ -64,7 +65,7 @@ function FormStudent() {
           id="chkModuloFrontEnd"
           value={ 'Front-End' }
           checked={ module === 'Front-End' }
-          onChange={(target) => handleChange(target, setModule)}
+          onChange={(target) => handleChangeDefault(target, 'module')}
         />
         Front-End
       </label>
@@ -75,7 +76,7 @@ function FormStudent() {
           id="chkModuloBackEnd"
           value={ 'Back-End' }
           checked={ module === 'Back-End' }
-          onChange={(target) => handleChange(target, setModule)} 
+          onChange={(target) => handleChangeDefault(target, 'module')} 
         />
         Back-End
       </label>
@@ -86,7 +87,7 @@ function FormStudent() {
           id="chkModuloCC"
           value={ 'Ciência da Computação' }
           checked={ module === 'Ciência da Computação' }
-          onChange={(target) => handleChange(target, setModule)} 
+          onChange={(target) => handleChangeDefault(target, 'module')} 
         />
         Ciência da Computação
       </label>
