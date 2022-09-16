@@ -7,12 +7,17 @@ function FormStudent() {
 
   const handleChangeDefault = ({target: { value }}, name) => {
     setFormStudent({...formStudent, [name]: value});
-    console.log(formStudent);
   }
 
   const saveStudent = (event) => {
     event.preventDefault();
     setStudents([...students, {fullName, age, city, module}])
+    setFormStudent({
+      fullName: '',
+      age: 0,
+      city: '',
+      module: 'Fundamentos',
+    });
   }
 
   return (
