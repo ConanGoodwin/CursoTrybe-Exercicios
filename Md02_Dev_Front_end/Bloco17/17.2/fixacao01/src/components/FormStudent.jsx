@@ -3,14 +3,19 @@ import StudentContext from "../APIContext/contexts/StudentContext";
 
 function FormStudent() {
   const { fullName, setFullName, age, setAge } = useContext(StudentContext);
-  const { city, setCity, module, setModule } = useContext(StudentContext);
+  const { city, setCity, module, setModule, students, setStudents } = useContext(StudentContext);
 
   const handleChange = ({target}, func) => {
     func(target.value);
   }
 
+  const saveStudent = (event) => {
+    event.preventDefault();
+    setStudents([...students, {fullName, age, city, module}])
+  }
+
   return (
-    <form style={{display: "flex", flexDirection: "column"}}>
+    <form style={{display: "flex", flexDirection: "column"}} onSubmit={saveStudent}>
       <label htmlFor="txtFullName">
         Nome completo:
         <input
@@ -22,7 +27,7 @@ function FormStudent() {
         />
       </label>
       <label htmlFor="txtAge">
-        Nome completo:
+        Idade:
         <input
          type="number"
          name="age"
@@ -85,6 +90,18 @@ function FormStudent() {
         />
         Ciência da Computação
       </label>
+      <button type="submit">Salvar Dados</button>
+
+      <ul>
+        {students.map(({fullName, age, city, module}) => (
+          <li>
+            <p>Nome: {fullName}</p>
+            <p>age: {age}</p>
+            <p>city: {city}</p>
+            <p>modulo: {module}</p>
+          </li>
+        ))}
+      </ul>
     </form>
   );
 }

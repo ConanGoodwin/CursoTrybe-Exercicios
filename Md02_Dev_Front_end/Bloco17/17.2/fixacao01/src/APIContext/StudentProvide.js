@@ -6,6 +6,7 @@ function StudentProvider({children}) {
   const [age, setAge] = useState('');
   const [city, setCity] = useState('');
   const [module, setModule] = useState('Fundamentos');
+  const [students, setStudents] = useState([]);
 
   const objProvider = {
     fullName,
@@ -16,6 +17,8 @@ function StudentProvider({children}) {
     setCity,
     module,
     setModule,
+    students,
+    setStudents,
   }
 
   return (
