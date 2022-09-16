@@ -93,8 +93,8 @@ function FormStudent() {
       <button type="submit">Salvar Dados</button>
 
       <ul>
-        {students.map(({fullName, age, city, module}) => (
-          <li>
+        {students.map(({fullName, age, city, module}, index) => (
+          <li key={ index }>
             <p>Nome: {fullName}</p>
             <p>age: {age}</p>
             <p>city: {city}</p>
