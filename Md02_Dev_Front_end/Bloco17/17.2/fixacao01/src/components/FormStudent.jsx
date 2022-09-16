@@ -5,16 +5,85 @@ function FormStudent() {
   const { fullName, setFullName, age, setAge } = useContext(StudentContext);
   const { city, setCity, module, setModule } = useContext(StudentContext);
 
+  const handleChange = ({target}, func) => {
+    func(target.value);
+  }
+
   return (
-    <form>
+    <form style={{display: "flex", flexDirection: "column"}}>
       <label htmlFor="txtFullName">
         Nome completo:
         <input
          type="text"
+         name="fullName"
          value={fullName}
          id="txtFullName"
-         onChange={() => setFullName(fullName)}
+         onChange={(target) => handleChange(target, setFullName)}
         />
+      </label>
+      <label htmlFor="txtAge">
+        Nome completo:
+        <input
+         type="number"
+         name="age"
+         value={age}
+         id="txtAge"
+         onChange={(target) => handleChange(target, setAge)}
+        />
+      </label>
+      <label htmlFor="txtCity">
+        Cidade:
+        <input
+         type="text"
+         name="city"
+         value={city}
+         id="txtCity"
+         onChange={(target) => handleChange(target, setCity)}
+        />
+      </label>
+      <label htmlFor="chkModuloFundamentos">
+        <input
+          type="radio" 
+          name="modulo" 
+          id="chkModuloFundamentos"
+          value={ 'Fundamentos' }
+          checked={ module === 'Fundamentos' }
+          onChange={(target) => handleChange(target, setModule)}
+        />
+        Fundamentos
+      </label>
+      <label htmlFor="chkModuloFrontEnd">
+        <input
+          type="radio" 
+          name="modulo" 
+          id="chkModuloFrontEnd"
+          value={ 'Front-End' }
+          checked={ module === 'Front-End' }
+          onChange={(target) => handleChange(target, setModule)}
+        />
+        Front-End
+      </label>
+      <label htmlFor="chkModuloBackEnd">
+        <input 
+          type="radio" 
+          name="modulo" 
+          id="chkModuloBackEnd"
+          value={ 'Back-End' }
+          checked={ module === 'Back-End' }
+          onChange={(target) => handleChange(target, setModule)} 
+        />
+        Back-End
+      </label>
+      <label htmlFor="chkModuloCC">
+        <input 
+          type="radio" 
+          name="modulo" 
+          id="chkModuloCC"
+          value={ 'Ciência da Computação' }
+          checked={ module === 'Ciência da Computação' }
+          onChange={(target) => handleChange(target, setModule)} 
+        />
+        Ciência da Computação
       </label>
     </form>
   );

@@ -5,7 +5,7 @@ function StudentProvider({children}) {
   const [fullName, setFullName] = useState('');
   const [age, setAge] = useState('');
   const [city, setCity] = useState('');
-  const [module, setModule] = useState('');
+  const [module, setModule] = useState('Fundamentos');
 
   const objProvider = {
     fullName,
