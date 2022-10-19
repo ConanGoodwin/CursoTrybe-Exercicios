@@ -27,3 +27,9 @@ INSERT INTO category (name) VALUES
 ('NEWEIRD'),
 ('WESTER'),
 ('TRASH');
+
+-- Cadastre uma nova loja na tabela sakila.store. 
+SELECT * FROM store;
+INSERT INTO store (manager_staff_id, address_id) VALUES (3,2);
+INSERT INTO sakila.store (manager_staff_id, address_id)
+VALUES (4, 3);
