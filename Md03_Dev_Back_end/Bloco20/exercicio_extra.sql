@@ -4,6 +4,8 @@ SELECT * FROM rental;
 SELECT customer_id, ROUND(AVG(DATEDIFF(return_date,rental_date))) FROM rental GROUP BY customer_id;
 
 -- 2. Retorne o tempo máximo, mínimo e a média de tempo dos filmes lançados em 2006 por rating (tabela film);
+SELECT * FROM film;
+SELECT MAX(length), MIN(length), AVG(length) FROM film WHERE release_year = 2006 GROUP BY rating;
 
 -- 3. Quantas pessoas usuárias temos por cidade (tabela address);
 
