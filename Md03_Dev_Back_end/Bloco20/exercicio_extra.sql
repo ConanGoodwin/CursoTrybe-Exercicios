@@ -1,5 +1,6 @@
 -- Active: 1666070927409@@127.0.0.1@3306@sakila
 -- 1. Retorne o id de customer e a média de dias que uma pessoa usuária permanece com o produto alugado (tabela rental);
+SELECT * FROM rental;
 
 -- 2. Retorne o tempo máximo, mínimo e a média de tempo dos filmes lançados em 2006 por rating (tabela film);
 
