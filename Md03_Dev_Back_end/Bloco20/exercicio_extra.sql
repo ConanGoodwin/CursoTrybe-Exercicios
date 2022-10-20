@@ -15,6 +15,7 @@ SELECT * FROM payment;
 SELECT SUM(amount), month(payment_date) FROM payment GROUP BY month(payment_date);
 
 -- 5. Retorne a quantidade de itens alugados pelo preço (amount) que sejam menores ou iguais a 1.99 (tabela payment)
+SELECT COUNT(*), amount FROM payment GROUP BY amount HAVING amount <= 1.99;
 
 
 -- 6. Qual valor arrecadado (soma) por valor de produto que tem mais saída por mês e ano? (tabela payment)
