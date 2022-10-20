@@ -8,6 +8,7 @@ SELECT * FROM film;
 SELECT MAX(length), MIN(length), AVG(length) FROM film WHERE release_year = 2006 GROUP BY rating;
 
 -- 3. Quantas pessoas usuárias temos por cidade (tabela address);
+SELECT COUNT(*), city_id FROM address GROUP BY city_id;
 
 -- 4. Qual o valor total (amount) recebido dentro de cada mês (tabela payment)?
 
