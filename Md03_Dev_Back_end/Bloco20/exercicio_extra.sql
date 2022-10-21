@@ -21,24 +21,25 @@ SELECT COUNT(*), amount FROM payment GROUP BY amount HAVING amount <= 1.99;
 -- 6. Qual valor arrecadado (soma) por valor de produto que tem mais saída por mês e ano? (tabela payment)
 -- SELECT COUNT(rental_id), rental_id FROM payment GROUP BY rental_id;
 
-select max(x.qt) tot, max(x.am), x.mm, x.yy from (
-SELECT count(i.film_id) qt, i.film_id id, month(p.payment_date) mm, year(p.payment_date) yy, sum(p.amount) am
-FROM sakila.payment p 
-inner join sakila.rental r ON p.rental_id=r.rental_id
-inner join inventory i on r.inventory_id = i.inventory_id
-inner join sakila.film f on i.film_id=f.film_id
-group by i.film_id, month(p.payment_date), year(p.payment_date)
-order by year(p.payment_date), month(p.payment_date), count(i.film_id) DESC
-) x group by x.yy, x.mm, x.qt having x.qt = (
-select max(z.qt) from (
-SELECT count(i.film_id) qt, i.film_id id, month(p.payment_date) mm, year(p.payment_date) yy, sum(p.amount) am
-FROM sakila.payment p 
-inner join sakila.rental r ON p.rental_id=r.rental_id
-inner join inventory i on r.inventory_id = i.inventory_id
-inner join sakila.film f on i.film_id=f.film_id
-group by i.film_id, month(p.payment_date), year(p.payment_date)
-order by year(p.payment_date), month(p.payment_date), count(i.film_id) DESC
-) z 
-where z.mm = x.mm and z.yy = x.yy
-group by z.yy, z.mm
+SELECT max(x.qt) totQt, max(x.am) totRental, x.mm, x.yy FROM (
+  SELECT count(i.film_id) qt, i.film_id id, month(p.payment_date) mm, year(p.payment_date) yy, sum(p.amount) am
+    FROM payment p 
+      INNER JOIN rental r ON p.rental_id=r.rental_id
+      INNER JOIN inventory i ON r.inventory_id = i.inventory_id
+      INNER JOIN film f ON i.film_id=f.film_id
+      GROUP BY i.film_id, month(p.payment_date), year(p.payment_date)
+      ORDER BY year(p.payment_date), month(p.payment_date), count(i.film_id) DESC
+) x 
+GROUP BY x.yy, x.mm, x.qt HAVING x.qt = (
+  SELECT max(z.qt) FROM (
+    SELECT count(i.film_id) qt, i.film_id id, month(p.payment_date) mm, year(p.payment_date) yy, sum(p.amount) am
+      FROM payment p 
+      INNER JOIN rental r ON p.rental_id=r.rental_id
+      INNER JOIN inventory i ON r.inventory_id = i.inventory_id
+      INNER JOIN film f ON i.film_id=f.film_id
+      GROUP BY i.film_id, month(p.payment_date), year(p.payment_date)
+      ORDER BY year(p.payment_date), month(p.payment_date), count(i.film_id) DESC
+  ) z 
+  WHERE z.mm = x.mm AND z.yy = x.yy
+  GROUP BY z.yy, z.mm
 );
