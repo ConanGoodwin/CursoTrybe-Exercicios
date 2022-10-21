@@ -21,8 +21,8 @@ SELECT COUNT(*), amount FROM payment GROUP BY amount HAVING amount <= 1.99;
 -- 6. Qual valor arrecadado (soma) por valor de produto que tem mais saída por mês e ano? (tabela payment)
 -- SELECT COUNT(rental_id), rental_id FROM payment GROUP BY rental_id;
 
-SELECT max(x.qt) totQt, max(x.am) totRental, x.mm, x.yy FROM (
-  SELECT count(i.film_id) qt, i.film_id id, month(p.payment_date) mm, year(p.payment_date) yy, sum(p.amount) am
+SELECT max(x.qt) totQt, max(x.am) totRental, x.id, x.title, x.mm, x.yy FROM (
+  SELECT count(i.film_id) qt, i.film_id id, f.title, month(p.payment_date) mm, year(p.payment_date) yy, sum(p.amount) am
     FROM payment p 
       INNER JOIN rental r ON p.rental_id=r.rental_id
       INNER JOIN inventory i ON r.inventory_id = i.inventory_id
@@ -30,7 +30,7 @@ SELECT max(x.qt) totQt, max(x.am) totRental, x.mm, x.yy FROM (
     GROUP BY i.film_id, month(p.payment_date), year(p.payment_date)
     ORDER BY year(p.payment_date), month(p.payment_date), count(i.film_id) DESC
 ) x 
-GROUP BY x.yy, x.mm, x.qt HAVING x.qt = (
+GROUP BY x.yy, x.mm, x.qt, x.id HAVING x.qt = (
   SELECT max(z.qt) FROM (
     SELECT count(i.film_id) qt, i.film_id id, month(p.payment_date) mm, year(p.payment_date) yy, sum(p.amount) am
       FROM payment p 
