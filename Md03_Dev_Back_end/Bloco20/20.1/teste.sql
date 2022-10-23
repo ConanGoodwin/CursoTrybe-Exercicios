@@ -41,3 +41,13 @@ SELECT count(i.film_id) qt, i.film_id id, month(p.payment_date) mm, year(p.payme
       INNER JOIN film f ON i.film_id=f.film_id
     GROUP BY i.film_id, month(p.payment_date), year(p.payment_date)
     ORDER BY year(p.payment_date), month(p.payment_date), count(i.film_id) DESC;
+    
+SELECT 
+  amount,
+  SUM(amount) AS `soma`,
+  YEAR(payment_date),
+  MONTH(payment_date)
+FROM
+  sakila.payment
+GROUP BY amount , YEAR(payment_date) , MONTH(payment_date)
+ORDER BY `soma` DESC;
