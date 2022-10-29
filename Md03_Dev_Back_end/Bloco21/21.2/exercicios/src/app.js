@@ -1,8 +1,20 @@
 const express = require('express');
-const { readFile } = require('./utils/fsUtils');
+const { readFile, writeFile } = require('./utils/fsUtils');
 
 const app = express();
 
-console.log(readFile('teste.json'));
+async function main() {
+  const reading = await readFile('teste.json');
+  // console.log(reading);
+  const newText = {
+    "id": 2,
+    "teste": "e mais um"
+  }
+
+  // await writeFile('teste.json',newText);
+  return reading;
+}
+
+main();
 
 module.exports = app;

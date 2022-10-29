@@ -1,6 +1,1 @@
-[
-  {
-    "id": 1,
-    "teste": "um teste"
-  }
-]
+[{"id":1,"teste":"um teste"},{"id":2,"teste":"e mais um"}]

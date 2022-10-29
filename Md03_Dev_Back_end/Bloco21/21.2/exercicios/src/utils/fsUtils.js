@@ -4,15 +4,38 @@ const path = require('path');
 const FILE_PATH = '../../database';
 
 const readFile = async (arqName) => {
-  const data = await fs.readFile(path.resolve(__dirname,`${FILE_PATH}/${arqName}`),'utf8');
-  // const data = await fs.readFile(`${FILE_PATH}/${arqName}`,'utf8');
-  console.log(data);
+  let data = [];
+
+  try {
+    data = await fs.readFile(path.resolve(__dirname,`${FILE_PATH}/${arqName}`),'utf8');
+  } catch (error) {
+    console.log(error);
+  }
 
   return data;
 };
 
+const writeFile = async (arqName, objText) => {
+  try {
+    const oldData = JSON.parse(await readFile(arqName));
+    console.log(path.resolve(__dirname,`${FILE_PATH}/${arqName}`));
+
+    fs.writeFile(path.resolve(__dirname,`${FILE_PATH}/${arqName}`), JSON.stringify([...oldData, objText]));  
+  } catch (error) {
+    confirm.error(error);
+  }
+}
+
+const newText = {
+  "id": 2,
+  "teste": "e mais um"
+}
+
+writeFile('teste.json',newText);
+
 // readFile('teste.json');
 
 module.exports = {
-  readFile
+  readFile,
+  writeFile
 };
