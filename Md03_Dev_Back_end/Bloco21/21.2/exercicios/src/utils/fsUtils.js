@@ -7,7 +7,7 @@ const readFile = async (arqName) => {
   let data = [];
 
   try {
-    data = await fs.readFile(path.resolve(__dirname,`${FILE_PATH}/${arqName}`),'utf8');
+    data = JSON.parse(await fs.readFile(path.resolve(__dirname,`${FILE_PATH}/${arqName}`),'utf8'));
   } catch (error) {
     console.log(error);
   }
@@ -17,8 +17,8 @@ const readFile = async (arqName) => {
 
 const writeFile = async (arqName, objText) => {
   try {
-    const oldData = JSON.parse(await readFile(arqName));
-    console.log(path.resolve(__dirname,`${FILE_PATH}/${arqName}`));
+    const oldData = await readFile(arqName);
+    // console.log(path.resolve(__dirname,`${FILE_PATH}/${arqName}`));
 
     fs.writeFile(path.resolve(__dirname,`${FILE_PATH}/${arqName}`), JSON.stringify([...oldData, objText]));  
   } catch (error) {
@@ -26,12 +26,12 @@ const writeFile = async (arqName, objText) => {
   }
 }
 
-const newText = {
-  "id": 2,
-  "teste": "e mais um"
-}
+// const newText = {
+//   "id": 2,
+//   "teste": "e mais um"
+// }
 
-writeFile('teste.json',newText);
+// writeFile('teste.json',newText);
 
 // readFile('teste.json');
 
