@@ -34,12 +34,12 @@ const writeFile = async (arqName, objText) => {
 const updateFile = async (arqName, objText, id) => {
   const oldData = await readFile(arqName);
   const newData = oldData.reduce((acc,curr) => {
-    if (curr.id === id) {
-      return [...acc, objText];
+    if (curr.id === Number(id)) {
+      return [...acc, {"id": curr.id, ...objText}];
     } else {
       return [...acc, curr];
     }
-  })
+  },[])
 
   fs.writeFile(path.resolve(__dirname,`${FILE_PATH}/${arqName}`), JSON.stringify(newData));
 }
@@ -55,5 +55,6 @@ const updateFile = async (arqName, objText, id) => {
 
 module.exports = {
   readFile,
-  writeFile
+  writeFile,
+  updateFile
 };

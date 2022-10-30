@@ -1,6 +1,6 @@
 const { json } = require('express');
 const express = require('express');
-const { readFile, writeFile } = require('./utils/fsUtils');
+const { readFile, writeFile, updateFile } = require('./utils/fsUtils');
 
 const app = express();
 app.use(express.json());
@@ -22,7 +22,15 @@ async function main() {
     // console.log(newMovie);
 
     writeFile('movies.json', newMovie);
-    return res.status(200).end();
+    return res.status(201).end();
+  });
+
+  app.put('/movies/:id', (req,res) => {
+    const idParams = req.params.id;
+    const newMovie = { ...req.body };
+
+    updateFile('movies.json', newMovie, idParams);
+    return res.status(201).end();
   });
 
   return readingMovies;
