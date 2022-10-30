@@ -44,6 +44,15 @@ const updateFile = async (arqName, objText, id) => {
   fs.writeFile(path.resolve(__dirname,`${FILE_PATH}/${arqName}`), JSON.stringify(newData));
 }
 
+const deleteFile = async (arqName, id) => {
+  const oldData = await readFile(arqName);
+  const indexData = oldData.findIndex((item) => item.id === Number(id));
+  oldData.splice(indexData,1);
+  const newData = oldData.map((item,index) => ({"id":index+1,"movie":item.movie,"price":item.price}))
+
+  fs.writeFile(path.resolve(__dirname,`${FILE_PATH}/${arqName}`), JSON.stringify(newData));
+}
+
 // const newText = {
 //   "id": 2,
 //   "teste": "e mais um"
@@ -56,5 +65,6 @@ const updateFile = async (arqName, objText, id) => {
 module.exports = {
   readFile,
   writeFile,
-  updateFile
+  updateFile,
+  deleteFile
 };

@@ -1,6 +1,6 @@
 const { json } = require('express');
 const express = require('express');
-const { readFile, writeFile, updateFile } = require('./utils/fsUtils');
+const { readFile, writeFile, updateFile, deleteFile } = require('./utils/fsUtils');
 
 const app = express();
 app.use(express.json());
@@ -30,7 +30,14 @@ async function main() {
     const newMovie = { ...req.body };
 
     updateFile('movies.json', newMovie, idParams);
-    return res.status(201).end();
+    return res.status(200).end();
+  });
+
+  app.delete('/movies/:id', (req,res) => {
+    const idParams = req.params.id;
+
+    deleteFile('movies.json', idParams);
+    return res.status(200).end();
   });
 
   return readingMovies;
