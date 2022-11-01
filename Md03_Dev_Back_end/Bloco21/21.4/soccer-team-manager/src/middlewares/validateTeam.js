@@ -13,7 +13,7 @@ const validateTeam = (req, res, next) => {
 const validateId = (req, res, next) => {
   const id = Number(req.params.id);
 
-  if (Number.isNaN(id)) return res.status(400).send({ message: 'id não numerico' });
+  if (Number.isNaN(id)) res.status(400).send({ message: 'id não numerico' });
 
   return next();
 }
@@ -21,7 +21,7 @@ const validateId = (req, res, next) => {
 const existingId = (req, res, next) => {
   const idParam = Number(req.params.id);
 
-  if (teams.some(({ id }) => id === idParam)) return next();
+  if (teams.some(({ id }) => id === idParam)) next();
 
   return res.status(404).send({ message: 'id não encontrado' });
 }
