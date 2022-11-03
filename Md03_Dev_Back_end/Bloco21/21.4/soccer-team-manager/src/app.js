@@ -1,7 +1,4 @@
 // src/app.js
-const OK = 200;
-// const INTERNAL_SERVER_ERROR = 500;
-// const NOT_FOUND = 404;
 const express = require('express');
 const route = require('./routes/rotas');
 

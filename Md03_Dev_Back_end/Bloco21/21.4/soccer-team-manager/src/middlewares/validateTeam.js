@@ -1,4 +1,5 @@
 const teams = require("../database/teams");
+const NOT_FOUND = 404;
 
 const validateTeam = (req, res, next) => {
   const requiredProperties = ['nome', 'sigla'];
@@ -23,7 +24,7 @@ const existingId = (req, res, next) => {
 
   if (teams.some(({ id }) => id === idParam)) next();
 
-  return res.status(404).send({ message: 'id não encontrado' });
+  return res.status(NOT_FOUND).send({ message: 'id não encontrado' });
 }
 
 module.exports = {

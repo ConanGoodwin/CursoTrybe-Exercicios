@@ -2,19 +2,22 @@ const express = require('express');
 const teams = require('../database/teams');
 const { validateId, existingId, validateTeam } = require('../middlewares/validateTeam');
 
+const OK = 200;
+// const INTERNAL_SERVER_ERROR = 500;
+
 const route = express.Router();
 
 let nextId = 3;
 
-route.get('/', (_req, res) => res.status(200).json({ message: 'Olá Mundo!' }));
+route.get('/', (_req, res) => res.status(OK).json({ message: 'Olá Mundo!' }));
 
-route.get('/teams', (req, res) => res.status(200).json({ teams }));
+route.get('/teams', (req, res) => res.status(OK).json({ teams }));
 
 route.get('/teams/:id', validateId, existingId, (req, res) => {
   const { id } = req.params;
   const teamEsp = teams.find((team) => team.id === Number(id));
 
-    res.status(200).json({ teamEsp });
+    res.status(OK).json({ teamEsp });
 });
 
 // Arranja os middlewares para chamar validateTeam primeiro
