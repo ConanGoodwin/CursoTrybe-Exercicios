@@ -7,7 +7,19 @@ const router = express.Router();
 router.get('/', async (_req,res) => {
   try {
     const [result] = await peopleDB.select();
-    // console.log(result);
+  
+    res.status(200).json(result);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: 'Ocorreu um erro ao buscar pessoas' });
+  }
+});
+
+
+router.get('/:id', async (req,res) => {
+  try {
+    const [result] = await peopleDB.selectOne(Number(req.params.id));
+  
     res.status(200).json(result);
   } catch (error) {
     console.log(error);

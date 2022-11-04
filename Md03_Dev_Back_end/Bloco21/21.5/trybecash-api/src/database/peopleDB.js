@@ -9,7 +9,19 @@ const select = () => conn.execute(
   'SELECT * FROM people'
 );
 
+const selectOne = (id) => conn.execute(
+  'SELECT * FROM people WHERE id=?',
+  [id]
+);
+
+const update = (id, person) => conn.execute(
+  'SELECT * FROM people WHERE id=?',
+  [id]
+);
+
 module.exports = {
   insert,
-  select
+  select,
+  selectOne,
+  update
 }
