@@ -1,6 +1,6 @@
 // src/routes/peopleRoutes.js
 const express = require('express');
-const { insert } = require('../database/peopleDB');
+const peopleDB = require('../database/peopleDB');
 
 const router = express.Router();
 
@@ -8,7 +8,7 @@ router.post('/', async (req, res) => {
   const person = req.body;
 
   try {
-    const [result] = await insert(person);
+    const [result] = await peopleDB.insert(person);
 
     res.status(201).json({
       message: `Pessoa cadastrada com sucesso com o id ${result.insertId}` });
