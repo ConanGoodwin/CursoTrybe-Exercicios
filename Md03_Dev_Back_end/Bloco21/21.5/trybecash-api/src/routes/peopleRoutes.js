@@ -4,6 +4,17 @@ const peopleDB = require('../database/peopleDB');
 
 const router = express.Router();
 
+router.get('/', async (_req,res) => {
+  try {
+    const [result] = await peopleDB.select();
+    // console.log(result);
+    res.status(200).json(result);
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: 'Ocorreu um erro ao buscar pessoas' });
+  }
+});
+
 router.post('/', async (req, res) => {
   const person = req.body;
 
