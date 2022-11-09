@@ -22,7 +22,7 @@ const saveWaypoints = (waypoints, travelId) => {
   return [];
 };
 
-app.post('/passengers/:passengerId/request/travel', async (req, res) => {
+route.post('/:passengerId/request/travel', async (req, res) => {
   const { passengerId } = req.params;
   const { startingAddress, endingAddress, waypoints } = req.body;
 
