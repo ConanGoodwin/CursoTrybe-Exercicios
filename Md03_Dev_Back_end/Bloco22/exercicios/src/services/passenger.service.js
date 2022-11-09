@@ -23,6 +23,8 @@ const requestTravel = async (passengerId, startingAddress, endingAddress, waypoi
 
     return travel;
   }
+
+  return false;
 };
 
 
