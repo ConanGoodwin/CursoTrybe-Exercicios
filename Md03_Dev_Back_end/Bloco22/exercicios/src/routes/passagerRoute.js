@@ -1,6 +1,5 @@
 const { Router } = require('express');
-const { travelModel, passagerModel } = require('../models');
-const connection = require('../models/connection');
+const { travelModel, passagerModel, waypointModel } = require('../models');
 
 const route = Router();
 
@@ -13,10 +12,7 @@ const doesPassengerExist = async (passengerId) => {
 
 const saveWaypoints = (waypoints, travelId) => {
   if (waypoints && waypoints.length > 0) {
-    return waypoints.map(async (value) => connection.execute(
-      'INSERT INTO waypoints (address, stop_order, travel_id) VALUE (?, ?, ?)',
-      [value.address, value.stopOrder, travelId],
-    ));
+    return waypoints.map(async (value) => await waypointModel.insert({ ...value, travelId }));
   }
   return [];
 };
