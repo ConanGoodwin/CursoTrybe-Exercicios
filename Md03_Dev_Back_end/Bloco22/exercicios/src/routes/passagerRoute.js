@@ -1,23 +1,18 @@
 const { Router } = require('express');
-const { travelModel } = require('../models');
+const { travelModel, passagerModel, waypointModel } = require('../models');
 
 const route = Router();
 
 const doesPassengerExist = async (passengerId) => {
-  const [[passenger]] = await connection.execute(
-    'SELECT * FROM passengers WHERE id = ?',
-    [passengerId],
-  );
+  const passenger = await passagerModel.findById(passengerId);
+
   if (passenger) return true;
   return false;
 };
 
 const saveWaypoints = (waypoints, travelId) => {
   if (waypoints && waypoints.length > 0) {
-    return waypoints.map(async (value) => connection.execute(
-      'INSERT INTO waypoints (address, stop_order, travel_id) VALUE (?, ?, ?)',
-      [value.address, value.stopOrder, travelId],
-    ));
+    return waypoints.map(async (value) => await waypointModel.insert({ ...value, travelId }));
   }
   return [];
 };

@@ -37,8 +37,28 @@ const findById = async (travelId) => {
   return camelize(result);
 };
 
+const setDriver = async (travelId, driverId) => {
+  const [result] = await connection.execute(
+    'UPDATE travels SET driver_id = ? WHERE id = ?',
+    [driverId, travelId],
+  );
+
+  return camelize(result.changedRows);
+};
+
+const setStatus = async (status, travelId, driverId) => {
+  const [result] = await connection.execute(
+    'UPDATE travels SET travel_status_id = ? WHERE id = ? AND driver_id = ?',
+    [status, travelId, driverId],
+  );
+  
+  return camelize(result.changedRows);
+};
+
 module.exports = {
   insert,
   findById,
   findByTravelStatusId,
+  setDriver,
+  setStatus,
 };
