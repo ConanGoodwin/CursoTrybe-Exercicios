@@ -3,11 +3,6 @@ const { travelModel } = require('../models');
 
 const route = Router();
 
-const WAITING_DRIVER = 1;
-const DRIVER_ON_THE_WAY = 2;
-const TRAVEL_IN_PROGRESS = 3;
-const TRAVEL_FINISHED = 4;
-
 const doesPassengerExist = async (passengerId) => {
   const [[passenger]] = await connection.execute(
     'SELECT * FROM passengers WHERE id = ?',

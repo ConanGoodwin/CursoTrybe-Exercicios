@@ -1,12 +1,13 @@
 const express = require('express');
 const connection = require('./models/connection');
 const { travelModel } = require('./models');
-const passagerRoute = require('./routes/passagerRoute');
+const { passagerRoute, driverRoute } = require('./routes');
 
 const app = express();
 
 app.use(express.json());
 app.use(passagerRoute);
+app.use(driverRoute);
 
 const WAITING_DRIVER = 1;
 const DRIVER_ON_THE_WAY = 2;
