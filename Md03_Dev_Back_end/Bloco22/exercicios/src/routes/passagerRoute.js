@@ -1,13 +1,12 @@
 const { Router } = require('express');
-const { travelModel } = require('../models');
+const { travelModel, passagerModel } = require('../models');
+const connection = require('../models/connection');
 
 const route = Router();
 
 const doesPassengerExist = async (passengerId) => {
-  const [[passenger]] = await connection.execute(
-    'SELECT * FROM passengers WHERE id = ?',
-    [passengerId],
-  );
+  const passenger = await passagerModel.findById(passengerId);
+
   if (passenger) return true;
   return false;
 };
