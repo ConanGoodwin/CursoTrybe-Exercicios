@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const { driverModel, travelModel } = require('../models');
+const connection = require('../models/connection');
 
 const route = Router();
 
@@ -22,44 +23,26 @@ route.get('/', async (_req,res) => {
 
 route.put('/:driverId/travels/:travelId/assign', async (req, res) => {
   const { travelId, driverId } = req.params;
-  await connection.execute(
-    'UPDATE travels SET driver_id = ? WHERE id = ?',
-    [driverId, travelId],
-  );
-  await connection.execute(
-    'UPDATE travels SET travel_status_id = ? WHERE id = ? AND driver_id = ?',
-    [DRIVER_ON_THE_WAY, travelId, driverId],
-  );
-  const [[result]] = await connection.execute(
-    'SELECT * FROM travels WHERE id = ?',
-    [travelId],
-  );
+
+  await travelModel.setDriver(travelId, driverId);
+  await travelModel.setStatus(DRIVER_ON_THE_WAY, travelId, driverId);
+  const result = await travelModel.findById(travelId);
   res.status(200).json(result);
 });
 
 route.put('/:driverId/travels/:travelId/start', async (req, res) => {
   const { travelId, driverId } = req.params;
-  await connection.execute(
-    'UPDATE travels SET travel_status_id = ? WHERE id = ? AND driver_id = ?',
-    [TRAVEL_IN_PROGRESS, travelId, driverId],
-  );
-  const [[result]] = await connection.execute(
-    'SELECT * FROM travels WHERE id = ?',
-    [travelId],
-  );
+
+  await travelModel.setStatus(TRAVEL_IN_PROGRESS, travelId, driverId);
+  const result = await travelModel.findById(travelId);
   res.status(200).json(result);
 });
 
 route.put('/:driverId/travels/:travelId/end', async (req, res) => {
   const { travelId, driverId } = req.params;
-  await connection.execute(
-    'UPDATE travels SET travel_status_id = ? WHERE id = ? AND driver_id = ?',
-    [TRAVEL_FINISHED, travelId, driverId],
-  );
-  const [[result]] = await connection.execute(
-    'SELECT * FROM travels WHERE id = ?',
-    [travelId],
-  );
+
+  await travelModel.setStatus(TRAVEL_FINISHED, travelId, driverId);
+  const result = await travelModel.findById(travelId);
   res.status(200).json(result);
 });
 
