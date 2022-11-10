@@ -1,35 +1,17 @@
 const { Router } = require('express');
-const { travelModel, passagerModel, waypointModel } = require('../models');
+const { requestTravel } = require('../services/passager.service');
 
 const route = Router();
-
-const doesPassengerExist = async (passengerId) => {
-  const passenger = await passagerModel.findById(passengerId);
-
-  if (passenger) return true;
-  return false;
-};
-
-const saveWaypoints = (waypoints, travelId) => {
-  if (waypoints && waypoints.length > 0) {
-    return waypoints.map(async (value) => await waypointModel.insert({ ...value, travelId }));
-  }
-  return [];
-};
 
 route.post('/:passengerId/request/travel', async (req, res) => {
   const { passengerId } = req.params;
   const { startingAddress, endingAddress, waypoints } = req.body;
 
-  if (await doesPassengerExist(passengerId)) {
-    const travelId = await travelModel.insert({ passengerId, startingAddress, endingAddress });
-    await Promise.all(saveWaypoints(waypoints, travelId));
+  const result = await requestTravel(passengerId, startingAddress, endingAddress, waypoints);
 
-    const travel = await travelModel.findById(travelId);
-    return res.status(201).json(travel);
-  }
+  if (!result.type) return res.status(201).json(result.message);
 
-  res.status(500).json({ message: 'Ocorreu um erro' });
+  res.status(500).json({ message: result.message });
 });
 
 module.exports = route;
