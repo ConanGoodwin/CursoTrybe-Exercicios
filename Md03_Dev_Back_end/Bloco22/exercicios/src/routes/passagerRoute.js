@@ -1,6 +1,6 @@
 const { Router } = require('express');
 const { travelModel } = require('../models');
-const { requestTravel } = require('../services/passenger.service');
+const { requestTravel } = require('../services/passager.service');
 
 const route = Router();
 

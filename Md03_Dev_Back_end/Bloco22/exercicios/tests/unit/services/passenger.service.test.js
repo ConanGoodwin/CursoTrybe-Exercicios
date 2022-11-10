@@ -1,6 +1,6 @@
 // tests/unit/services/passenger.service.test.js
 const { expect } = require('chai');
-const { requestTravel } = require('../../../src/services/passenger.service');
+const { requestTravel } = require('../../../src/services/passager.service');
 
 describe('Verificando service pessoa passageira', function () {
     describe('solicitação de viagem', function () {
