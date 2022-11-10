@@ -1,5 +1,6 @@
 const { Router } = require('express');
 const { requestTravel } = require('../services/passenger.service');
+const { mapError } = require('../utils/errorMap');
 
 const route = Router();
 
@@ -7,11 +8,11 @@ route.post('/:passengerId/request/travel', async (req, res) => {
   const { passengerId } = req.params;
   const { startingAddress, endingAddress, waypoints } = req.body;
 
-  const result = await requestTravel(passengerId, startingAddress, endingAddress, waypoints);
+  const { type, message } = await requestTravel(passengerId, startingAddress, endingAddress, waypoints);
 
-  if (!result.type) return res.status(201).json(result.message);
+  if (!type) return res.status(201).json(message);
 
-  res.status(500).json({ message: result.message });
+  res.status(mapError(type)).json({ message });
 });
 
 module.exports = route;
