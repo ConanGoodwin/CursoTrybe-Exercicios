@@ -97,4 +97,8 @@ describe('Verificando service pessoa passageira', function () {
         expect(error.message).to.equal('"endingAddress" contains an invalid value');
     });
   });
+
+  afterEach(function () {
+    sinon.restore();
+  });
 });
