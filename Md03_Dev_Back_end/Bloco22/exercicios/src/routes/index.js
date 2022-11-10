@@ -1,7 +1,7 @@
-const driverRoute = require("./driverRoute");
-const passagerRoute = require("./passagerRoute");
+const driverRoute = require("./driver.router");
+const passengerRoute = require("./passenger.router.js");
 
 module.exports = {
   driverRoute,
-  passagerRoute,
+  passengerRoute,
 }

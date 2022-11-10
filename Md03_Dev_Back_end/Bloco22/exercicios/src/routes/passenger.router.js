@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { requestTravel } = require('../services/passager.service');
+const { requestTravel } = require('../services/passenger.service');
 
 const route = Router();
 

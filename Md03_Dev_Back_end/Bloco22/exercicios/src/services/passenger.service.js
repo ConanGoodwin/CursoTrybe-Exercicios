@@ -1,8 +1,8 @@
-const { travelModel, passagerModel, waypointModel } = require('../models');
+const { travelModel, passengerModel, waypointModel } = require('../models');
 const { validateRequestTravelSchema } = require('./validations/validationsInputValues');
 
 const doesPassengerExist = async (passengerId) => {
-  const passenger = await passagerModel.findById(passengerId);
+  const passenger = await passengerModel.findById(passengerId);
 
   if (passenger) return true;
   return false;

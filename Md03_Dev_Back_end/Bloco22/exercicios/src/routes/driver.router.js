@@ -1,6 +1,5 @@
 const { Router } = require('express');
 const { driverModel, travelModel } = require('../models');
-const connection = require('../models/connection');
 
 const route = Router();
 
