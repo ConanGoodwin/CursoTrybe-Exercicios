@@ -1,9 +1,9 @@
 // tests/unit/services/passenger.service.test.js
 const { expect } = require('chai');
 const sinon = require('sinon');
-const { requestTravel } = require('../../../src/services/passager.service');
+const { requestTravel } = require('../../../src/services/passenger.service');
 
-const { travelModel, waypointModel, passagerModel } = require('../../../src/models');
+const { travelModel, waypointModel, passengerModel } = require('../../../src/models');
 
 const { travelResponse } = require('./mocks/passenger.service.mock');
 
@@ -11,7 +11,7 @@ describe('Verificando service pessoa passageira', function () {
   describe('solicitação de viagem', function () {
     it('sem pontos de parada é realizada com sucesso', async function () {
       // arrange
-      sinon.stub(passagerModel, 'findById').resolves(true); // retorna verdadeiro sinalizando que o passageiro existe
+      sinon.stub(passengerModel, 'findById').resolves(true); // retorna verdadeiro sinalizando que o passageiro existe
       sinon.stub(travelModel, 'insert').resolves(1); // retorna travel com ID 1
       sinon.stub(travelModel, 'findById').resolves(travelResponse);
 
@@ -41,7 +41,7 @@ describe('Verificando service pessoa passageira', function () {
 
     it('com pontos de parada é realizada com sucesso', async function () {
       // arrange
-      sinon.stub(passagerModel, 'findById').resolves(true); // retorna verdadeiro sinalizando que o passageiro existe
+      sinon.stub(passengerModel, 'findById').resolves(true); // retorna verdadeiro sinalizando que o passageiro existe
       sinon.stub(travelModel, 'insert').resolves(1); // retorna travel com ID 1
       sinon.stub(travelModel, 'findById').resolves(travelResponse);
       sinon.stub(waypointModel, 'insert').resolves(1); // retorna waypoint com ID 1
