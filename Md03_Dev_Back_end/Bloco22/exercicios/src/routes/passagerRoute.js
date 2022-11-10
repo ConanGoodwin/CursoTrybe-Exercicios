@@ -10,9 +10,9 @@ route.post('/:passengerId/request/travel', async (req, res) => {
 
   const result = await requestTravel(passengerId, startingAddress, endingAddress, waypoints);
 
-  if (result) return res.status(201).json(result);
+  if (!result.type) return res.status(201).json(result.message);
 
-  res.status(500).json({ message: 'Ocorreu um erro' });
+  res.status(500).json({ message: result.message });
 });
 
 module.exports = route;

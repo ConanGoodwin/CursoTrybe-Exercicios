@@ -21,10 +21,10 @@ const requestTravel = async (passengerId, startingAddress, endingAddress, waypoi
     await Promise.all(saveWaypoints(waypoints, travelId));
     const travel = await travelModel.findById(travelId);
 
-    return travel;
+    return { type: null, message: travel };
   }
 
-  return false;
+  return { type: 'INVALID_VALUE', message: `Passager id ${passengerId} not found` };
 };
 
 
