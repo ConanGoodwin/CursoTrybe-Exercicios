@@ -1,14 +1,8 @@
 const { Router } = require('express');
-const { travelModel } = require('../models');
-const { passengerService, driverService } = require('../services');
+const { driverService } = require('../services');
 const { mapError } = require('../utils/errorMap');
 
 const route = Router();
-
-const WAITING_DRIVER = 1;
-const DRIVER_ON_THE_WAY = 2;
-const TRAVEL_IN_PROGRESS = 3;
-const TRAVEL_FINISHED = 4;
 
 route.get('/open/travels', async (_req, res) => {
   const { type, message } = await driverService.getWaitingDriverTravels();
