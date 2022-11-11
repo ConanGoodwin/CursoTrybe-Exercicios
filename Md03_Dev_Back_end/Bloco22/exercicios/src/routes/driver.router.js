@@ -1,5 +1,7 @@
 const { Router } = require('express');
 const { driverModel, travelModel } = require('../models');
+const { passengerService, driverService } = require('../services');
+const { mapError } = require('../utils/errorMap');
 
 const route = Router();
 
@@ -9,9 +11,11 @@ const TRAVEL_IN_PROGRESS = 3;
 const TRAVEL_FINISHED = 4;
 
 route.get('/open/travels', async (_req, res) => {
-  const result = await travelModel.findByTravelStatusId(WAITING_DRIVER);
+  const { type, message } = await driverService.getWaitingDriverTravels();
 
-  res.status(200).json(result);
+  if (type) return res.status(mapError(type)).json({ message });
+
+  res.status(200).json(message);
 });
 
 route.get('/', async (_req,res) => {
