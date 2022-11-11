@@ -27,8 +27,6 @@ route.get('/', async (_req,res) => {
 });
 
 route.put('/:driverId/travels/:travelId/assign', async (req, res) => {
-  // const { travelId, driverId } = req.params;
-
   const { type, message } = await driverService.travelAssign(req.params);
 
   if (type) return res.status(mapError(type)).json({ message });
@@ -37,19 +35,19 @@ route.put('/:driverId/travels/:travelId/assign', async (req, res) => {
 });
 
 route.put('/:driverId/travels/:travelId/start', async (req, res) => {
-  const { travelId, driverId } = req.params;
+  const { type, message } = await driverService.startTravel(req.params);
 
-  await travelModel.setStatus(TRAVEL_IN_PROGRESS, travelId, driverId);
-  const result = await travelModel.findById(travelId);
-  res.status(200).json(result);
+  if (type) return res.status(mapError(type)).json({ message });
+
+  res.status(200).json(message);
 });
 
 route.put('/:driverId/travels/:travelId/end', async (req, res) => {
-  const { travelId, driverId } = req.params;
+  const { type, message } = await driverService.endTravel(req.params);
 
-  await travelModel.setStatus(TRAVEL_FINISHED, travelId, driverId);
-  const result = await travelModel.findById(travelId);
-  res.status(200).json(result);
+  if (type) return res.status(mapError(type)).json({ message });
+
+  res.status(200).json(message);
 });
 
 module.exports = route;

@@ -25,8 +25,15 @@ const findAll = async () => {
   return { type: 'DRIVER_NOT_FOUND', message: 'Not found driver' };
 }
 
+async function setStatus(status, travelId, driverId) {
+  await travelModel.setStatus(status, travelId, driverId);
+
+  const result = await travelModel.findById(travelId);
+  return { type: null, message: result };
+}
+
 const travelAssign = async ({ travelId, driverId }) => {
-  let error  = await validateInputValues({ travelId, driverId });
+  let error  = await checkValidations({ travelId, driverId });
 
   if (error.type) return error;
 
@@ -34,16 +41,29 @@ const travelAssign = async ({ travelId, driverId }) => {
   if (error.type) return error;
 
   await travelModel.setDriver(travelId, driverId);
-  await travelModel.setStatus(DRIVER_ON_THE_WAY, travelId, driverId);
+  return await setStatus(DRIVER_ON_THE_WAY, travelId, driverId);
+}
 
-  const result = await travelModel.findById(travelId);
-  return { type: null, message: result };
+const startTravel = async ({ travelId, driverId }) => {
+  const error  = await validateInputValues({ travelId, driverId });
+
+  if (error.type) return error;
+
+  return await setStatus(TRAVEL_IN_PROGRESS, travelId, driverId);
+}
+
+const endTravel = async ({ travelId, driverId }) => {
+  const error  = await validateInputValues({ travelId, driverId });
+
+  if (error.type) return error;
+
+  return await setStatus(TRAVEL_FINISHED, travelId, driverId);
 }
 
 module.exports = {
   getWaitingDriverTravels,
   findAll,
   travelAssign,
-  // startTravel,
-  // endTravel
+  startTravel,
+  endTravel
 };
