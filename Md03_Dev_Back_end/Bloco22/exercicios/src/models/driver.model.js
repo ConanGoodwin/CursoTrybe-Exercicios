@@ -8,6 +8,15 @@ const findAll = async () => {
   return camelize(result);
 }
 
+const findById = async (driverId) => {
+  const [[result]] = await connection.execute(
+    'SELECT * FROM drivers WHERE id = ?',
+    [driverId],
+  );
+  return camelize(result);
+};
+
 module.exports = {
   findAll,
+  findById
 }

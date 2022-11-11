@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { driverModel, travelModel } = require('../models');
+const { travelModel } = require('../models');
 const { passengerService, driverService } = require('../services');
 const { mapError } = require('../utils/errorMap');
 
@@ -19,18 +19,21 @@ route.get('/open/travels', async (_req, res) => {
 });
 
 route.get('/', async (_req,res) => {
-  const result = await driverModel.findAll();
+  const { type, message } = await driverService.findAll();
 
-  res.status(200).json(result);
+  if (type) return res.status(mapError(type)).json({ message });
+
+  res.status(200).json(message);
 });
 
 route.put('/:driverId/travels/:travelId/assign', async (req, res) => {
-  const { travelId, driverId } = req.params;
+  // const { travelId, driverId } = req.params;
 
-  await travelModel.setDriver(travelId, driverId);
-  await travelModel.setStatus(DRIVER_ON_THE_WAY, travelId, driverId);
-  const result = await travelModel.findById(travelId);
-  res.status(200).json(result);
+  const { type, message } = await driverService.travelAssign(req.params);
+
+  if (type) return res.status(mapError(type)).json({ message });
+
+  res.status(200).json(message);
 });
 
 route.put('/:driverId/travels/:travelId/start', async (req, res) => {
