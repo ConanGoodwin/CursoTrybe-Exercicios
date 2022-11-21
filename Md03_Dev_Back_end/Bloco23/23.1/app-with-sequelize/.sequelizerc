@@ -1,0 +1,10 @@
+const path = require('path');
+
+const PASTA = 'src';
+
+module.exports = {
+  'config': path.resolve(PASTA, 'config', 'config.js'),
+  'models-path': path.resolve(PASTA, 'models'),
+  'seeders-path': path.resolve(PASTA, 'seeders'),
+  'migrations-path': path.resolve(PASTA, 'migrations'),
+};
