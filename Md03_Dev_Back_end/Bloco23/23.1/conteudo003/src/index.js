@@ -10,5 +10,9 @@ const PORT = process.env.PORT || 3001;
 
 app.listen(PORT,()=> console.log(`escutando na porta ${PORT}`));
 
-app.use('/user/:id', userController.getById);
-app.use('/user', userController.getAll);
+app.get('/user/search/:id', userController.getByIdAndEmail);
+app.get('/user/:id', userController.getById);
+app.get('/user', userController.getAll);
+app.post('/user', userController.createUser);
+app.put('/user/:id', userController.updateUser);
+app.delete('/user/:id', userController.deleteUser);
