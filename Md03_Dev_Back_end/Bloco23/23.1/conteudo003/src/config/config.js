@@ -5,7 +5,10 @@ const config = {
     "password": process.env.MYSQL_PASSWORD || null,
     "database": process.env.MYSQL_DATABASE || "database_development",
     "host": process.env.MYSQL_HOST || "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "define": {
+      "timestamps": false
+   },
 }
 
 module.exports = {
