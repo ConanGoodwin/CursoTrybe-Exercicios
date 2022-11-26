@@ -10,4 +10,5 @@ const PORT = process.env.PORT || 3001;
 
 app.listen(PORT,()=> console.log(`escutando na porta ${PORT}`));
 
+app.use('/user/:id', userController.getById);
 app.use('/user', userController.getAll);
