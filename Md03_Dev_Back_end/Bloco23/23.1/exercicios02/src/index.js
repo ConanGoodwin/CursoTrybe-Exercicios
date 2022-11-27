@@ -1,7 +1,8 @@
 const express = require('express');
+require('dotenv').config();
+require('express-async-errors');
 const { errorFunc } = require('./middlewares');
 const { routeBook } = require('./routers');
-require('dotenv').config();
 
 const app = express();
 
