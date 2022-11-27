@@ -28,7 +28,22 @@ const getById = async (id) => {
   }
 }
 
+const create = async (title, author, pageQuantity) => {
+  try {
+    const message = await Book.create({ title, author, pageQuantity });
+
+    if (message) return { type: null, message };
+
+    return { type: 'NOT_CREATE_BOOK', message: `Faild insert the book` };
+  } catch (error) {
+    const err = new Error('Faild connect to DB');
+    err.type = 'ERROR_CONECTION';
+    throw err;
+  }
+}
+
 module.exports = {
   getAll,
-  getById
+  getById,
+  create,
 }
