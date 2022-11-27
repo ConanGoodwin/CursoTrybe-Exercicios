@@ -5,6 +5,7 @@ module.exports = {
   async up (queryInterface, Sequelize) {
     await queryInterface.bulkInsert('books', [
       {
+        id: 1,
         title: 'Historia Sem Fim',
         author: 'aquele alemão',
         page_quantity: 300,
@@ -12,6 +13,7 @@ module.exports = {
         updated_at: Sequelize.literal('CURRENT_TIMESTAMP')
       },
       {
+        id: 2,
         title: 'Historia Com Fim',
         author: 'eu mesmo',
         page_quantity: 1,
