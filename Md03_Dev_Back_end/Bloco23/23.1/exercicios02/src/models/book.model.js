@@ -1,8 +1,10 @@
 'use strict';
-const { define } = require('sequelize');
+const {
+  Model
+} = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  const Book = define('Book', {
+  const Book = sequelize.define('Book', {
     title: DataTypes.STRING,
     author: DataTypes.STRING,
     pageQuantity: DataTypes.INTEGER,
