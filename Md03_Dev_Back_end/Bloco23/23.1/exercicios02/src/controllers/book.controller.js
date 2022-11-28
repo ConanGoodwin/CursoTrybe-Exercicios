@@ -26,8 +26,27 @@ const create = async (req, res) => {
   finalize(201, type, message, res);
 }
 
+const update = async (req, res) => {
+  const { title, author, pageQuantity } = req.body
+  const { type } = await serviceBook.update(Number(req.params.id),title, author, pageQuantity);
+
+  if (type==='NOT_FIND_BOOKS') return res.status(404).json({ message: 'Book not found!' });
+
+  finalize(200, type, { message: 'Book updated!' }, res);
+}
+
+const remove = async (req, res) => {
+  const { type } = await serviceBook.remove(Number(req.params.id));
+
+  if (type==='NOT_FIND_BOOKS') return res.status(404).json({ message: 'Book not found!' });
+
+  finalize(204, type, { message: 'Book deleted!' }, res);
+}
+
 module.exports = {
   getAll,
   getById,
-  create
+  create,
+  update,
+  remove
 }
