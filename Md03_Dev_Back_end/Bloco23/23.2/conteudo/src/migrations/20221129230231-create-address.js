@@ -17,9 +17,10 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
-      number: {
+      numero: {
         allowNull: false,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        field: 'number'
       },
       employeeId: {
         allowNull: false,
