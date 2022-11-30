@@ -12,12 +12,12 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     timestamps: false,
     tableName: 'employees',
-    underscroded: true
+    underscored: true
   });
 
   Employee.associate = (models) => {
     Employee.hasOne(models.Address,
-      { foreignKey: 'employeeId', as: 'addresses' });
+      { foreignKey: 'employee_id', as: 'addresses' });
   }
 
   return Employee;

@@ -12,13 +12,13 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     timestamps: false,
-    uderscored: true,
+    underscored: true,
     tableName: 'addresses',
   });
 
   Address.associate = (models) => {
     Address.belongsTo(models.Employee,{
-      foreignKey: 'employeeId', as: 'employees'
+      foreignKey: 'employee_id', as: 'employees'
     });
   }
 
