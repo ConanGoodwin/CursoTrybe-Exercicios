@@ -9,6 +9,7 @@ var Ex04 = require("./area");
 // console.log(`1 Quilograma em gramas é: ${Ex02.convert(1,'kg','g')}g`);
 // console.log(`1 Quilolitro em litros é: ${Ex03.convert(1,'kl','l')}l`);
 // console.log(`1 Quilômetro quadrado em metros quadrados é: ${Ex04.convert(1,'km²','m²')}m²`);
+console.log("Tipos de convers\u00E3o:\n- 'medida de comprimento'\n- 'massa'\n- 'volume'\n- 'area'");
 var typeCovertion = readlineSync.question('Qual o tipo de converção? ');
 var baseValue = readlineSync.question('Qual é a unidade base da converção? ');
 ;

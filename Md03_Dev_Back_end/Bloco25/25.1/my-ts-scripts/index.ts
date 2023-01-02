@@ -9,6 +9,12 @@ import * as Ex04 from './area';
 // console.log(`1 Quilolitro em litros é: ${Ex03.convert(1,'kl','l')}l`);
 // console.log(`1 Quilômetro quadrado em metros quadrados é: ${Ex04.convert(1,'km²','m²')}m²`);
 
+console.log(`Tipos de conversão:
+- 'medida de comprimento'
+- 'massa'
+- 'volume'
+- 'area'`);
+
 const typeCovertion = readlineSync.question('Qual o tipo de converção? ');
 const baseValue: string = readlineSync.question('Qual é a unidade base da converção? ');;
 const conversionValue: string = readlineSync.question('Qual é a unidade meta da converção? ');;
