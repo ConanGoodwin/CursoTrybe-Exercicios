@@ -19,7 +19,7 @@ const main = async () => {
   const createNewBook = await bookModel.create(newBook);
   const books = await bookModel.getAll();
   console.log(createNewBook);
-  // console.log(books);
+  console.log(books);
 }
 
 main();
