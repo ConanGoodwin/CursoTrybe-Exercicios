@@ -51,6 +51,43 @@ class Car implements ICar {
   }
 }
 
+type Slice = 4 | 6 | 8;
+type typeComum = 'Calabresa' | 'Frango' | 'Pepperoni';
+type typeVegetarian = "Marguerita" | "Palmito" | "Cogumelos";
+type typeSugar = "Nutela" | "Goiabada com Queijo" | "Marshmallow";
+
+interface IPizza {
+  flavor: string;
+  slices: Slice;
+}
+
+interface IPizzaComum extends IPizza {
+  flavor: typeComum;
+}
+
+interface IPizzaVegetarian extends IPizza {
+  flavor: typeVegetarian;
+}
+
+interface IPizzaSugar extends IPizza {
+  flavor: typeSugar;
+}
+
+const pizza01: IPizza = {
+  flavor: 'Calabresa',
+  slices: 8
+}
+
+const pizza02: IPizza = {
+  flavor: 'Marguerita',
+  slices: 6
+}
+
+const pizza03: IPizza = {
+  flavor: 'Nutela',
+  slices: 4
+}
+
 const gol = new Car('Volkswagen','prata',4);
 gol.turnOn();
 gol.speedUp();
