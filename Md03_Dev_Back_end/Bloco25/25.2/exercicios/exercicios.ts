@@ -128,3 +128,24 @@ gol.speedDown();
 gol.speedDown();
 gol.stop();
 gol.turnOff();
+
+type callBackFilter<T> = (value: T, index?: number, array?: Array<T>) => boolean;
+
+function myFilter<T>(array: T[], callback: callBackFilter<T>): Array<T> {
+  const newArray: Array<T> = [];
+
+  array.forEach((item, index) => {
+    if (callback(item,index,array)) newArray.push(item);
+  });
+
+  return newArray;
+}
+
+console.log(myFilter([1, 2, 3], (item) => item < 3 ));
+
+
+console.log(myFilter(["a", "b", "c"], (item) => {
+
+  return item !== "a"
+
+}));
