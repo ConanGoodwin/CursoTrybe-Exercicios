@@ -5,7 +5,7 @@ import Authors from './AuthorModel';
 class Books extends Model {
   declare id: number;
   declare title: string;
-  declare bookId: number;
+  declare authorId: number;
   declare genreId: number; 
 }
 
@@ -21,7 +21,7 @@ Books.init(
       type: STRING,
       allowNull: false
     },
-    bookId: {
+    authorId: {
       type: INTEGER,
       allowNull: false
     },

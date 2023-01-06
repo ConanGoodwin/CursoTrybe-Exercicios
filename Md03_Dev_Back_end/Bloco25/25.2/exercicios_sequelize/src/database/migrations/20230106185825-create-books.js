@@ -20,7 +20,7 @@ module.exports = {
           model: 'authors',
           key: 'id'
         },
-        field: 'book_id'
+        field: 'author_id'
       },
       genreId: {
         allowNull: false,
