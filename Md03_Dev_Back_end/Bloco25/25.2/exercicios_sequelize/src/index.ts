@@ -8,7 +8,7 @@ import sequelize, { Sequelize } from "sequelize";
   const booksPerAuthors = await Books.findAll({
     raw: true,
     group: [ 'books.author_id' ],
-    attributes: [['author.name', 'author name'], [sequelize.fn('count', Sequelize.col('books.id')), 'totalBooks']],
+    attributes: ['author.name', [sequelize.fn('count', Sequelize.col('books.id')), 'totalBooks']],
     include: [{ attributes: [], model: Authors }],
   });
   console.table(booksPerAuthors);
