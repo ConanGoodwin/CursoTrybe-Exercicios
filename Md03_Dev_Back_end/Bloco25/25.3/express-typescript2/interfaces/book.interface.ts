@@ -1,5 +1,5 @@
 // ./interfaces/book.interface.ts
-interface Book {
+interface IBook {
   id?: number;
   title: string;
   price: number;
@@ -7,4 +7,4 @@ interface Book {
   isbn: string;
 }
 
-export default Book;
+export default IBook;
