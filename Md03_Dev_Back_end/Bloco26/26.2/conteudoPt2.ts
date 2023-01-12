@@ -23,7 +23,7 @@ class Birds implements Animal {
   }
 }
 
-const parrot02 = new Birds('Papagaio',new Date(Date.parse('Aug 16, 2015')));
+export const parrot = new Birds('Papagaio',new Date(Date.parse('Aug 16, 2015')));
 
-console.log(parrot02.age);
-parrot02.fly();
+console.log(parrot.age);
+parrot.fly();
