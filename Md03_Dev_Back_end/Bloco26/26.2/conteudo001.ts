@@ -34,3 +34,37 @@ main(tigger);
 tigger.walk();
 console.log(parrot.age);
 parrot.fly();
+
+class Superclass {
+  constructor(public isSuper: boolean = true) {}
+
+  protected sayHello() {
+    console.log('Olá Mundo!');
+  }
+}
+
+class Subclass extends Superclass {
+  constructor() {
+    super(false);
+  }
+
+  sayHello2() {
+    this.sayHello();
+  }
+}
+
+function myFunction(objClass: Subclass) {
+  objClass.sayHello2();
+}
+
+function mySuperFunction(objClass: Superclass) {
+  (objClass.isSuper) ? console.log('super') : console.log('sub');
+}
+
+const objSubClass = new Subclass();
+const objSupreClass = new Superclass();
+
+myFunction(objSubClass);
+// myFunction(objSupreClass);
+mySuperFunction(objSubClass);
+mySuperFunction(objSupreClass);
