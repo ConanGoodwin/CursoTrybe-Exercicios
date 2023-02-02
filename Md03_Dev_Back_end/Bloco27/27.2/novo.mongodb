@@ -1,0 +1,12 @@
+use("aula-filter-operators");
+// db.filmes.find().sort(&and: [{ diretor: 1},{ titulo: 1}]);
+// db.filmes.find({}, { avaliacao.ruim: 0, avaliacao.medio: 0}).sort({ diretor: 1}, { titulo: 1}, { ano: -1}, { avaliacao.bom : -1});
+// db.filmes.find({ avaliacao.bom : { $gte: 5, $lte: 10 }});
+db.filmes.find(
+  {
+    $and: [
+      { ano: 2014 },
+      { ano: { $exists: true }}
+    ]
+  }
+);
