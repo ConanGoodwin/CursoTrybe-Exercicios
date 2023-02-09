@@ -1,0 +1,7 @@
+use('cinema');
+db.movies.countDocuments();
+db.movies.find({},{ title: 1, imdbRating: 1 }).sort({ imdbRating: 1 });
+db.movies.find({},{ title: 1, imdbRating: 1 }).sort({ imdbRating: -1 }).limit(1);
+db.movies.find({ imdbRating: { $gt: 7, $lte: 10 } },{ title: 1, imdbRating: 1 }).sort({ imdbRating: 1 });
+// db.movies.deleteMany({ imdbRating: { $gt: 7, $lte: 10 } });
+db.movies.find();
