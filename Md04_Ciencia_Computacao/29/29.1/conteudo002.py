@@ -22,3 +22,9 @@ fruits.sort()
 fruits
 # ['Laranja', 'banana', 'kiwi', 'maçã', 'melão', 'pera', 'uva']
 
+# exrecicio 05
+trybe_course = ["Introdução", "Front-end", "Back-end"]
+trybe_course.append("Ciência da Computação")
+trybe_course
+# ['Introdução', 'Front-end', 'Back-end', 'Ciência da Computação']
+
