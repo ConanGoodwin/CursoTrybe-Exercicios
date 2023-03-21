@@ -28,3 +28,30 @@ trybe_course.append("Ciência da Computação")
 trybe_course
 # ['Introdução', 'Front-end', 'Back-end', 'Ciência da Computação']
 
+# tupla
+user = ("Will","Marcondes",42)
+user[0]
+#'Will'
+
+# conjuntos
+permissions = {"member","group"}
+permissions.add("root")
+permissions.add("member")
+permissions
+# {'member', 'root', 'group'}
+permissions.union({"user"})
+# {'member', 'root', 'group', 'user'}
+permissions.intersection({"user","member"})
+# {'member'}
+permissions.difference({"user"})
+# {'group', 'member', 'root'}
+permissions.difference({"member"})
+# {'group', 'root'}
+permissions
+# {'member', 'root', 'group'}
+
+# exercicio 07
+nomes = set()
+nomes.add('Conan')
+nomes
+# {'Conan'}
