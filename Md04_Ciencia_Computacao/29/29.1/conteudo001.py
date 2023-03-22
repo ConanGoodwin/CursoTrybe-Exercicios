@@ -20,5 +20,5 @@ print(seconds)
 # exercicio 04
 preco_base = 24.20
 preco_desconto = preco_base - ((preco_base * 40) / 100)
-custo_atacado =  3 + (preco_desconto * 60) + (0.75 * 59)
+custo_atacado = 3 + (preco_desconto * 60) + (0.75 * 59)
 print(custo_atacado)
