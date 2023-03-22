@@ -41,3 +41,5 @@ def fatorial(num):
 
 
 print(fatorial(5))
+
+# Exercicio 13
