@@ -43,3 +43,12 @@ def fatorial(num):
 print(fatorial(5))
 
 # Exercicio 13
+ratings = [6, 8, 5, 9, 10]
+ratings_per_10 = [num * 10 for num in ratings]
+print(ratings_per_10)
+
+# Exercicio 14
+ratings = [6, 8, 5, 9, 10]
+for num in ratings:
+    if num % 3 == 0:
+        print(f"{num} é multiplo de 3")
