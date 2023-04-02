@@ -13,9 +13,9 @@ vertical_stair_name("PEDRO")
 
 
 # Exercicio 02
-def choice_word():
+def choice_word(word_base: list[str]):
     count = 0
-    word = random.choice(["word1", "word2", "word3"])
+    word = random.choice(word_base)
     scrambled_word = "".join(random.sample(word, len(word)))
     while count < 3:
         print(f"Palavra embaralhada: {scrambled_word}")
@@ -30,8 +30,11 @@ def choice_word():
     print(f"palavra correta: {word}")
 
 
-choice_word()
+choice_word(["word1", "word2", "word3"])
 
+# Exercicio 3
+with open("fonte.txt", mode="r") as file:
+    choice_word([word.replace("\n", "") for word in file])
 
 # Exercicio 04
 
