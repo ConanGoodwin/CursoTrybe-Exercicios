@@ -57,3 +57,20 @@ with open("books.csv", mode="w", encoding="utf-8") as file:
     for categoria, porcentagen in percent.items():
         row = {"categoria": categoria, "porcentagem": porcentagen}
         write.writerow(row)
+
+# Exercicio 05
+with open("pokemons.json", mode="r") as file:
+    randomPoke = random.choice(json.load(file))["name"]
+
+print(randomPoke)
+count = 0
+tip = ""
+while count < len(randomPoke):
+    chute = input("Quem é esse pokemon? ")
+    if chute == randomPoke:
+        print("Você acertou!")
+        break
+    tip += randomPoke[count]
+    print(f"Tentativa {count+1}: {tip}")
+    count += 1
+print("Tente outra vez!")
