@@ -1,3 +1,5 @@
+import csv
+import json
 import random
 
 
@@ -29,3 +31,26 @@ def choice_word():
 
 
 choice_word()
+
+
+# Exercicio 04
+
+with open("books.json", mode="r") as file:
+    books = json.load(file)
+    category = {}
+    percent = {}
+    qt_books = len(books)
+    for book in books:
+        for categories in book["categories"]:
+            if categories:
+                if categories not in category.keys():
+                    category[categories] = 0
+                category[categories] += 1
+                percent[categories] = (category[categories] * 100) / qt_books
+
+with open("books.csv", mode="w", encoding="utf-8") as file:
+    write = csv.DictWriter(file, fieldnames=["categoria", "porcentagem"])
+    write.writeheader()
+    for categoria, porcentagen in percent.items():
+        row = {"categoria": categoria, "porcentagem": porcentagen}
+        write.writerow(row)
