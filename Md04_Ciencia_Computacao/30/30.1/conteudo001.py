@@ -77,6 +77,16 @@ class Ventilador(Eletrodomestico):
         return "ventilador"
 
 
+class Geladeira(Eletrodomestico):
+    def __str__(self) -> str:
+        return "geladeira"
+
+
+class Telcelular(Eletrodomestico):
+    def __str__(self) -> str:
+        return "celular"
+
+
 meu_liquidificador = Liquidificador("Azul", 200, 127, 300)
 seu_liquidificador = Liquidificador(cor="Preto", potencia=250, tensao=220, preco=200)
 meu_liquidificador.ligar(2)
@@ -92,6 +102,7 @@ class Cozinheiro:
         self.saldo_na_conta = saldo_na_conta
         self.liquidificador = None
         self.ventilador = None
+        self.outro_eletros = []
 
     def __str__(self) -> str:
         return f"""
@@ -99,6 +110,9 @@ class Cozinheiro:
         - Saldo na conta: {self.saldo_na_conta}
         - Possui liquidificador? { self.liquidificador != None}
         - Possui Ventilador? { self.ventilador != None}
+        - Possui outros eletricos? {
+            [str(eletro) for eletro in self.outro_eletros]
+        }
         """
 
     def comprar_eletro(self, eletro):
@@ -106,13 +120,15 @@ class Cozinheiro:
             print("Voce não possui saldo para esta compra")
         else:
             self.saldo_na_conta -= eletro.preco
-            if str(eletro) == "liquidificador":
+            if type(eletro) == Liquidificador:
                 self.liquidificador = eletro
-            elif str(eletro) == "ventilador":
+            elif type(eletro) == Ventilador:
                 self.ventilador = eletro
+            else:
+                self.outro_eletros.append(eletro)
 
 
-pessoa_cozinheira = Cozinheiro("Jacq", 1000)
+pessoa_cozinheira = Cozinheiro("Jacq", 10000)
 pessoa_cozinheira.comprar_eletro(seu_liquidificador)
 print(pessoa_cozinheira.saldo_na_conta)
 print(pessoa_cozinheira)
@@ -130,3 +146,9 @@ class Teste(Eletrodomestico):
 
 teste = Teste("bla", 200, 127, 400, "teste")
 print(teste.mais_um)
+
+sua_geladeira = Geladeira("Branca", 500, 127, 1000)
+pessoa_cozinheira.comprar_eletro(sua_geladeira)
+seu_celular = Telcelular("Preto", 100, 127, 500)
+pessoa_cozinheira.comprar_eletro(seu_celular)
+print(pessoa_cozinheira)
