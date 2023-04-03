@@ -71,8 +71,15 @@ class Liquidificador(Eletrodomestico):
     def __str__(self) -> str:
         return "liquidificador"
 
+    def status(self):
+        return "Sim" if super().status() else "Não"
+
 
 class Ventilador(Eletrodomestico):
+    def __init__(self, cor, potencia, tensao, preco, qt_pas=2) -> None:
+        super().__init__(cor, potencia, tensao, preco)
+        self.qt_pas = qt_pas
+
     def __str__(self) -> str:
         return "ventilador"
 
