@@ -30,3 +30,14 @@ class TV:
 tv = TV(100)
 tv.ligar_desligar()
 print(tv.status)
+
+# exercicio 02
+
+
+class Estatistica:
+    @classmethod
+    def média(cls, valores: list):
+        return sum(valores) / len(valores)
+
+
+print(Estatistica.média([2, 5, 2]))
