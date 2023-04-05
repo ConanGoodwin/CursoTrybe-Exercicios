@@ -17,6 +17,7 @@ class DbSimulator:
         if query == "select * from person":
             first = (page * per_page) - per_page
             last = page * per_page
+            print(first, last)
             return eval(f"self.{table}[first:last]")
 
     def __iter__(self):
