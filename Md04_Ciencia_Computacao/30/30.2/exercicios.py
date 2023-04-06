@@ -1,3 +1,5 @@
+from abc import ABC, abstractmethod
+
 # Exercicio 01
 class Soldier:
     def __init__(self, level) -> None:
@@ -92,3 +94,44 @@ print("\nInvertido:")
 invert_game = BaralhoInverso()
 for carta in invert_game:
     print(carta)
+
+
+class PngInterface(ABC):
+    @abstractmethod
+    def draw(self):
+        raise NotImplementedError
+
+
+# Exercicio 05
+
+
+class PngImage(PngInterface):
+    def __init__(self, png_path) -> None:
+        self.png_path = png_path
+        self.format = "raster"
+
+    def draw(self):
+        print(f"Drawing PNG {self.png_path} with {self.format}")
+
+
+class SvgImage:
+    def __init__(self, svg_path) -> None:
+        self.svg_path = svg_path
+        self.format = "vector"
+
+    def get_image(self):
+        return f"SVG {self.svg_path} with {self.format}"
+
+
+class SvgAdapter(PngInterface):
+    def __init__(self, svg_image) -> None:
+        self.svg_image = svg_image
+
+    def draw(self):
+        print(f"Drawing {self.svg_image.get_image()}")
+
+
+png_image = PngImage("./test")
+png_image.draw()
+svg_image = SvgAdapter(SvgImage("./test"))
+svg_image.draw()
