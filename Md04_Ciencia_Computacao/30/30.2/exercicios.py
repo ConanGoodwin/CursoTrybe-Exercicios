@@ -61,13 +61,11 @@ class BaralhoInterator:
 
 
 class Baralho:
-    naipes = "copas ouros espadas paus".split()
-    valores = "A 2 3 4 5 6 7 8 9 10 J Q K".split()
+    n = "copas ouros espadas paus".split()
+    v = "A 2 3 4 5 6 7 8 9 10 J Q K".split()
 
     def __init__(self) -> None:
-        self._cartas = [
-            Carta(valor, naipe) for naipe in self.naipes for valor in self.valores
-        ]
+        self._cartas = [Carta(va, na) for na in self.n for va in self.v]
 
     def __len__(self):
         return len(self._cartas)
