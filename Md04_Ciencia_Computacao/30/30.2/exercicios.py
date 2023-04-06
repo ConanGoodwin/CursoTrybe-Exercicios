@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
 
 # Exercicio 01
+
+
 class Soldier:
     def __init__(self, level) -> None:
         self.level = level
@@ -135,3 +137,34 @@ png_image = PngImage("./test")
 png_image.draw()
 svg_image = SvgAdapter(SvgImage("./test"))
 svg_image.draw()
+
+# Exercicio 06
+
+
+class IssStrategy:
+    def __init__(self, valor) -> None:
+        self.valor = valor
+
+    def __repr__(self) -> str:
+        return str(self.valor * 0.1)
+
+
+class IcmsStrategy:
+    def __init__(self, valor) -> None:
+        self.valor = valor
+
+    def __repr__(self) -> str:
+        return str(self.valor * 0.06)
+
+
+class Orcamento:
+    def __init__(self, valor) -> None:
+        self.valor = valor
+
+    def calcular_imposto(self, tipo_imposto):
+        return tipo_imposto(self.valor)
+
+
+orcamento = Orcamento(1000)
+print(f"ISS: {orcamento.calcular_imposto(IssStrategy)}")
+print(f"ICMS: {orcamento.calcular_imposto(IcmsStrategy)}")
