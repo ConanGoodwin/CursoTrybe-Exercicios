@@ -33,3 +33,50 @@ class StarWarsGame:
 
 StarWarsGame(Soldier(5)).figth_enemy()
 StarWarsGame(CharacterAdapter(Jedi(20))).figth_enemy()
+
+# Exercicio 02
+
+
+class Carta:
+    def __init__(self, valor, naipe) -> None:
+        self.valor = valor
+        self.naipe = naipe
+
+    def __repr__(self) -> str:
+        return f"{self.valor} de {self.naipe}"
+
+
+class BaralhoInterator:
+    def __init__(self, cartas) -> None:
+        self.__index = 0
+        self.__cartas = cartas
+
+    def __next__(self):
+        try:
+            result = self.__cartas[self.__index]
+            self.__index += 1
+            return result
+        except IndexError:
+            raise StopIteration
+
+
+class Baralho:
+    naipes = "copas ouros espadas paus".split()
+    valores = "A 2 3 4 5 6 7 8 9 10 J Q K".split()
+
+    def __init__(self) -> None:
+        self._cartas = [
+            Carta(valor, naipe) for naipe in self.naipes for valor in self.valores
+        ]
+
+    def __len__(self):
+        return len(self._cartas)
+
+    def __iter__(self):
+        return BaralhoInterator(self._cartas)
+
+
+new_game = Baralho()
+print(len(new_game))
+for carta in new_game:
+    print(carta)
