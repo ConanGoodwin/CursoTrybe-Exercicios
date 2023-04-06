@@ -78,3 +78,17 @@ new_game = Baralho()
 print(len(new_game))
 for carta in new_game:
     print(carta)
+
+# Exercicio 03
+
+
+class BaralhoInverso(Baralho):
+    def __iter__(self):
+        self._cartas.reverse()
+        return BaralhoInterator(self._cartas)
+
+
+print("\nInvertido:")
+invert_game = BaralhoInverso()
+for carta in invert_game:
+    print(carta)
