@@ -101,3 +101,4 @@ for (let j = 0; j < prefixos.length; j += 1) {
 
 const total = semelhancas.reduce((acc, curr) => (acc += parseInt(curr)), 0);
 console.log(total);
+// fim dis testes
