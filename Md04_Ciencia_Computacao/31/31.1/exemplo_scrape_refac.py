@@ -11,16 +11,21 @@ while next_page_url:
 
     for product in selector.css(".product_pod"):
         title = product.css("a::attr(title)").get()
-        price = product.css(".price_color::text").get()
+        price = product.css(".price_color::text").re_first(r"£\d+\.\d{2}")
 
-        detail_href = selector.css("h3 a::attr(href)").get()
+        detail_href = product.css("h3 a::attr(href)").get()
         detail_page_url = URL_BASE + detail_href
 
         detail_response = requests.get(detail_page_url)
         dt_selector = Selector(text=detail_response.text)
 
         description = dt_selector.css("#product_description ~ p::text").get()
+        suffix = "...more"
+        if description.endswith(suffix):
+            description = description[: -len(suffix)]
         print(title, price)
         print(description)
+        print("-----------------------------")
+        print("")
 
     next_page_url = selector.css(".next a::attr(href)").get()
