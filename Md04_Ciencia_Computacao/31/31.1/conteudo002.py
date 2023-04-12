@@ -1,4 +1,4 @@
-# import time
+import time
 import requests
 
 for _ in range(15):
